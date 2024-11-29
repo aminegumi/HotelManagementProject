@@ -51,6 +51,6 @@ namespace HotelRes1
             pictureBoxShow.Show();
         }
 
-       
+        
     }
 }

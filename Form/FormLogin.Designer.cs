@@ -244,7 +244,7 @@
             Controls.Add(panel1);
             Controls.Add(pictureBoxMinimize);
             Controls.Add(pictureBoxClose);
-            Cursor = Cursors.Hand;
+            Cursor = Cursors.Arrow;
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormLogin";
             Text = "Form1";
