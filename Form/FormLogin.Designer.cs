@@ -165,6 +165,7 @@
             buttonLogIn.TabIndex = 3;
             buttonLogIn.Text = "Log In";
             buttonLogIn.UseVisualStyleBackColor = false;
+            buttonLogIn.Click += buttonLogIn_Click;
             // 
             // textBoxUsername
             // 
@@ -244,7 +245,6 @@
             Controls.Add(panel1);
             Controls.Add(pictureBoxMinimize);
             Controls.Add(pictureBoxClose);
-            Cursor = Cursors.Arrow;
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormLogin";
             Text = "Form1";

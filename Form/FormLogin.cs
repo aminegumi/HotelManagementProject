@@ -1,10 +1,15 @@
+using MySql.Data.MySqlClient;
+
 namespace HotelRes1
 {
     public partial class FormLogin : Form
     {
+        private DbConnector db;
+         
         public FormLogin()
         {
             InitializeComponent();
+            db = new DbConnector();
         }
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
@@ -51,6 +56,21 @@ namespace HotelRes1
             pictureBoxShow.Show();
         }
 
-        
+        private void buttonLogIn_Click(object sender, EventArgs e)
+        {
+            bool check = db.IsValidNamePass(textBoxUsername.Text.Trim(), textBoxPassword.Text.Trim());
+            if (textBoxUsername.Text.Trim() == string.Empty || textBoxPassword.Text.Trim() == string.Empty)
+                MessageBox.Show("veillez rensegner les deux champs", "les champs requisent", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+            {
+                if (check)
+                {
+                    FormDashboard fd = new FormDashboard();
+                    fd.Show();
+                }
+                else
+                    MessageBox.Show("Invalid Username or Password.", "Username or Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
