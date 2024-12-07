@@ -69,7 +69,7 @@ namespace HotelRes1
                     fd.Show();
                 }
                 else
-                    MessageBox.Show("Invalid Username or Password.", "Username or Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Nom utilisateur et mdp non valide.", "Username ou Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
