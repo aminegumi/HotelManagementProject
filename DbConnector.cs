@@ -9,11 +9,11 @@ namespace HotelRes1
 {
     internal class DbConnector
     {
-        private string _connectionString;
+        private string connectionString;
         private MySqlConnection connection;
         public DbConnector() {
-            _connectionString = "Server=127.0.0.1;Database=hotel_management_system;Uid=root;Pwd=;";
-            connection = new MySqlConnection(_connectionString);
+            connectionString = "Server=127.0.0.1;Database=hotel_management_system;Uid=root;Pwd=;";
+            connection = new MySqlConnection(connectionString);
         }
 
 

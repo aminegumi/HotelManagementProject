@@ -83,6 +83,16 @@ namespace HotelRes1.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap house_vector_icon {
+            get {
+                object obj = ResourceManager.GetObject("house-vector-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_fermer_la_fenêtre_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-fermer-la-fenêtre-50", resourceCulture);
@@ -93,9 +103,29 @@ namespace HotelRes1.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_macbook_de_performance_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-macbook-de-performance-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap monkey {
             get {
                 object obj = ResourceManager.GetObject("monkey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_vector_user_young_boy_avatar_icon_png_image_4827810 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-vector-user-young-boy-avatar-icon-png-image_4827810", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

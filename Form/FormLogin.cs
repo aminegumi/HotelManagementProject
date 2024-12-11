@@ -66,6 +66,9 @@ namespace HotelRes1
                 if (check)
                 {
                     FormDashboard fd = new FormDashboard();
+                    fd.Username = textBoxUsername.Text;
+                    textBoxUsername.Clear();
+                    textBoxPassword.Clear();
                     fd.Show();
                 }
                 else
