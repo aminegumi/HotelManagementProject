@@ -134,7 +134,7 @@
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
-            label4.ForeColor = Color.FromArgb(128, 64, 0);
+            label4.ForeColor = Color.FromArgb(175, 130, 96);
             label4.Location = new Point(144, 268);
             label4.Name = "label4";
             label4.Size = new Size(152, 19);
@@ -155,7 +155,7 @@
             // buttonLogIn
             // 
             buttonLogIn.Anchor = AnchorStyles.None;
-            buttonLogIn.BackColor = Color.FromArgb(128, 64, 0);
+            buttonLogIn.BackColor = Color.FromArgb(175, 130, 96);
             buttonLogIn.FlatAppearance.BorderSize = 0;
             buttonLogIn.FlatStyle = FlatStyle.Flat;
             buttonLogIn.ForeColor = Color.White;
@@ -216,7 +216,7 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.None;
-            panel2.BackColor = Color.FromArgb(128, 64, 0);
+            panel2.BackColor = Color.FromArgb(175, 130, 96);
             panel2.Location = new Point(661, 44);
             panel2.Name = "panel2";
             panel2.Size = new Size(5, 534);
@@ -247,7 +247,7 @@
             Controls.Add(pictureBoxClose);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormLogin";
-            Text = "Form1";
+            Text = "Hotel_Management_System | Login";
             WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).EndInit();
