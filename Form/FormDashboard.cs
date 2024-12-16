@@ -27,9 +27,10 @@ namespace HotelRes1
 
         private void linkLabelLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+
             DialogResult message = MessageBox.Show("Do you want to log out", "Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (message == DialogResult.Yes) {
+            if (message == DialogResult.Yes)
+            {
                 timer1.Stop();
                 this.Close();
             }
@@ -49,28 +50,40 @@ namespace HotelRes1
         private void buttonDashboard_Click(object sender, EventArgs e)
         {
             MovePanel(buttonDashboard);
+            userControlSetting1.Show();
+            userControlClient1.Hide();
         }
 
         private void buttonClient_Click(object sender, EventArgs e)
         {
             MovePanel(buttonClient);
+            userControlClient1.Clear();
+            userControlClient1.Show();
         }
 
         private void buttonRoom_Click(object sender, EventArgs e)
         {
             MovePanel(buttonRoom);
+            userControlClient1.Hide();
+            userControlSetting1.Hide();
+
+
         }
 
         private void buttonReservation_Click(object sender, EventArgs e)
         {
             MovePanel(buttonReservation);
+            userControlClient1.Hide();
+            userControlSetting1.Hide();
         }
 
         private void buttonSetting_Click(object sender, EventArgs e)
         {
-            MovePanel(buttonSetting);   
+            MovePanel(buttonSetting);
             userControlSetting1.Clear();
             userControlSetting1.Show();
         }
+
+        
     }
 }

@@ -53,6 +53,7 @@
             panel6 = new Panel();
             userControlSetting1 = new User_Control.UserControlSetting();
             timer1 = new System.Windows.Forms.Timer(components);
+            userControlClient1 = new User_Control.UserControlClient();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -76,7 +77,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(315, 720);
+            panel1.Size = new Size(315, 826);
             panel1.TabIndex = 0;
             // 
             // panelSlide
@@ -213,16 +214,16 @@
             // 
             panel2.Controls.Add(label1);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(315, 665);
+            panel2.Location = new Point(315, 771);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1051, 55);
+            panel2.Size = new Size(1221, 55);
             panel2.TabIndex = 0;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Location = new Point(113, 16);
+            label1.Location = new Point(198, 16);
             label1.Name = "label1";
             label1.Size = new Size(865, 24);
             label1.TabIndex = 1;
@@ -237,7 +238,7 @@
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(315, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1051, 192);
+            panel4.Size = new Size(1221, 192);
             panel4.TabIndex = 0;
             // 
             // labelUsername
@@ -271,7 +272,7 @@
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(0, 0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1051, 81);
+            panel5.Size = new Size(1221, 81);
             panel5.TabIndex = 2;
             // 
             // labelDateTime
@@ -295,7 +296,7 @@
             linkLabelLogout.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             linkLabelLogout.ForeColor = Color.FromArgb(175, 130, 96);
             linkLabelLogout.LinkColor = Color.FromArgb(175, 130, 96);
-            linkLabelLogout.Location = new Point(971, 47);
+            linkLabelLogout.Location = new Point(1141, 47);
             linkLabelLogout.Name = "linkLabelLogout";
             linkLabelLogout.Size = new Size(86, 25);
             linkLabelLogout.TabIndex = 0;
@@ -308,7 +309,7 @@
             // 
             pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox2.Image = Properties.Resources.pngtree_vector_user_young_boy_avatar_icon_png_image_4827810;
-            pictureBox2.Location = new Point(900, 5);
+            pictureBox2.Location = new Point(1070, 5);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(65, 65);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -317,11 +318,12 @@
             // 
             // panel6
             // 
+            panel6.Controls.Add(userControlClient1);
             panel6.Controls.Add(userControlSetting1);
             panel6.Dock = DockStyle.Fill;
             panel6.Location = new Point(315, 192);
             panel6.Name = "panel6";
-            panel6.Size = new Size(1051, 473);
+            panel6.Size = new Size(1221, 579);
             panel6.TabIndex = 0;
             // 
             // userControlSetting1
@@ -332,7 +334,7 @@
             userControlSetting1.Location = new Point(0, 0);
             userControlSetting1.Margin = new Padding(4, 3, 4, 3);
             userControlSetting1.Name = "userControlSetting1";
-            userControlSetting1.Size = new Size(1051, 473);
+            userControlSetting1.Size = new Size(1221, 579);
             userControlSetting1.TabIndex = 0;
             userControlSetting1.Visible = false;
             // 
@@ -340,12 +342,24 @@
             // 
             timer1.Tick += timer1_Tick;
             // 
+            // userControlClient1
+            // 
+            userControlClient1.BackColor = Color.White;
+            userControlClient1.Dock = DockStyle.Fill;
+            userControlClient1.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            userControlClient1.Location = new Point(0, 0);
+            userControlClient1.Margin = new Padding(3, 2, 3, 2);
+            userControlClient1.Name = "userControlClient1";
+            userControlClient1.Size = new Size(1221, 579);
+            userControlClient1.TabIndex = 0;
+            userControlClient1.Visible = false;
+            // 
             // FormDashboard
             // 
             AutoScaleDimensions = new SizeF(12F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1366, 720);
+            ClientSize = new Size(1536, 826);
             Controls.Add(panel6);
             Controls.Add(panel4);
             Controls.Add(panel2);
@@ -398,5 +412,6 @@
         private Panel panel6;
         private System.Windows.Forms.Timer timer1;
         private User_Control.UserControlSetting userControlSetting1;
+        private User_Control.UserControlClient userControlClient1;
     }
 }

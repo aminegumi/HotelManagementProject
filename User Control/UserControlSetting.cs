@@ -85,7 +85,7 @@ namespace HotelRes1.User_Control
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
             bool check;
-            if (ID !="")
+            if (ID != "")
             {
                 if (textBoxUsername1.Text.Trim() == string.Empty || textBoxPassword1.Text.Trim() == string.Empty)
                 {
@@ -93,7 +93,7 @@ namespace HotelRes1.User_Control
                 }
                 else
                 {
-                    check = db.UpdateUser(ID,textBoxUsername1.Text.Trim(), textBoxPassword1.Text.Trim());
+                    check = db.UpdateUser(ID, textBoxUsername1.Text.Trim(), textBoxPassword1.Text.Trim());
                     if (check)
                     {
                         MessageBox.Show("User updated successfully", "Add User", MessageBoxButtons.OK, MessageBoxIcon.Information);
