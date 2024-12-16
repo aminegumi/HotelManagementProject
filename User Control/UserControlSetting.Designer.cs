@@ -179,7 +179,7 @@
             dataGridViewUser.Anchor = AnchorStyles.None;
             dataGridViewUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewUser.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
-            dataGridViewUser.Location = new Point(28, 149);
+            dataGridViewUser.Location = new Point(28, 150);
             dataGridViewUser.Name = "dataGridViewUser";
             dataGridViewUser.ReadOnly = true;
             dataGridViewUser.RowHeadersWidth = 62;
@@ -217,7 +217,7 @@
             // textBoxSearchUsername
             // 
             textBoxSearchUsername.Anchor = AnchorStyles.None;
-            textBoxSearchUsername.Location = new Point(316, 89);
+            textBoxSearchUsername.Location = new Point(316, 90);
             textBoxSearchUsername.Name = "textBoxSearchUsername";
             textBoxSearchUsername.Size = new Size(330, 32);
             textBoxSearchUsername.TabIndex = 4;
@@ -228,7 +228,7 @@
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(316, 52);
+            label5.Location = new Point(316, 53);
             label5.Name = "label5";
             label5.Size = new Size(114, 23);
             label5.TabIndex = 3;
@@ -240,7 +240,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(175, 130, 96);
-            label4.Location = new Point(6, 16);
+            label4.Location = new Point(6, 17);
             label4.Name = "label4";
             label4.Size = new Size(143, 26);
             label4.TabIndex = 0;
@@ -258,7 +258,7 @@
             tabPageUpdateAndDeleteUser.Location = new Point(4, 4);
             tabPageUpdateAndDeleteUser.Name = "tabPageUpdateAndDeleteUser";
             tabPageUpdateAndDeleteUser.Padding = new Padding(3);
-            tabPageUpdateAndDeleteUser.Size = new Size(1023, 364);
+            tabPageUpdateAndDeleteUser.Size = new Size(1023, 366);
             tabPageUpdateAndDeleteUser.TabIndex = 2;
             tabPageUpdateAndDeleteUser.Text = "Update and Delete User";
             tabPageUpdateAndDeleteUser.UseVisualStyleBackColor = true;
@@ -273,7 +273,7 @@
             buttonDelete.FlatStyle = FlatStyle.Flat;
             buttonDelete.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonDelete.ForeColor = Color.White;
-            buttonDelete.Location = new Point(252, 248);
+            buttonDelete.Location = new Point(252, 249);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(145, 45);
             buttonDelete.TabIndex = 12;
@@ -290,7 +290,7 @@
             buttonUpdate.FlatStyle = FlatStyle.Flat;
             buttonUpdate.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonUpdate.ForeColor = Color.White;
-            buttonUpdate.Location = new Point(76, 248);
+            buttonUpdate.Location = new Point(76, 249);
             buttonUpdate.Name = "buttonUpdate";
             buttonUpdate.Size = new Size(145, 45);
             buttonUpdate.TabIndex = 11;
@@ -301,7 +301,7 @@
             // textBoxPassword1
             // 
             textBoxPassword1.Anchor = AnchorStyles.None;
-            textBoxPassword1.Location = new Point(559, 157);
+            textBoxPassword1.Location = new Point(559, 158);
             textBoxPassword1.Name = "textBoxPassword1";
             textBoxPassword1.Size = new Size(330, 32);
             textBoxPassword1.TabIndex = 10;
@@ -311,7 +311,7 @@
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(559, 120);
+            label6.Location = new Point(559, 121);
             label6.Name = "label6";
             label6.Size = new Size(106, 23);
             label6.TabIndex = 9;
@@ -320,7 +320,7 @@
             // textBoxUsername1
             // 
             textBoxUsername1.Anchor = AnchorStyles.None;
-            textBoxUsername1.Location = new Point(76, 157);
+            textBoxUsername1.Location = new Point(76, 158);
             textBoxUsername1.Name = "textBoxUsername1";
             textBoxUsername1.Size = new Size(330, 32);
             textBoxUsername1.TabIndex = 8;
@@ -330,7 +330,7 @@
             label7.Anchor = AnchorStyles.None;
             label7.AutoSize = true;
             label7.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(76, 120);
+            label7.Location = new Point(76, 121);
             label7.Name = "label7";
             label7.Size = new Size(114, 23);
             label7.TabIndex = 7;
@@ -342,11 +342,11 @@
             label8.AutoSize = true;
             label8.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.FromArgb(175, 130, 96);
-            label8.Location = new Point(6, 13);
+            label8.Location = new Point(6, 14);
             label8.Name = "label8";
-            label8.Size = new Size(267, 26);
+            label8.Size = new Size(273, 26);
             label8.TabIndex = 6;
-            label8.Text = "Update and Delete User";
+            label8.Text = "Update and Delete User:";
             // 
             // UserControlSetting
             // 

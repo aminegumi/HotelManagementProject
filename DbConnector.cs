@@ -141,6 +141,108 @@ namespace HotelRes1
                 connection.Close();
             }
         }
+        public bool AddClient(string firstName, string lastName, string phone, string address)
+        {
+            try
+            {
+                connection.Open();
+                string query = "INSERT INTO client_table (Client_FirstName, Client_LastName, Client_Phone, Client_Address) VALUES (@firstName, @lastName, @phone, @address)";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@firstName", firstName);
+                    cmd.Parameters.AddWithValue("@lastName", lastName);
+                    cmd.Parameters.AddWithValue("@phone", phone);
+                    cmd.Parameters.AddWithValue("@address", address);
+
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public void DisplayAndSearchClient(string query, DataGridView dataGridView)
+        {
+            try
+            {
+                connection.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    dataGridView.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public bool UpdateClient(string id, string firstName, string lastName, string phone, string address)
+        {
+            try
+            {
+                connection.Open();
+                string query = "UPDATE client_table SET Client_FirstName = @firstName, Client_LastName = @lastName, Client_Phone = @phone, Client_Address = @address WHERE Client_ID = @id";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@firstName", firstName);
+                    cmd.Parameters.AddWithValue("@lastName", lastName);
+                    cmd.Parameters.AddWithValue("@phone", phone);
+                    cmd.Parameters.AddWithValue("@address", address);
+
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+        public bool DeleteClient(string id)
+        {
+            try
+            {
+                connection.Open();
+                string query = "DELETE FROM client_table WHERE Client_ID = @id";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
 
 
     }
