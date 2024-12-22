@@ -51,9 +51,10 @@
             linkLabelLogout = new LinkLabel();
             pictureBox2 = new PictureBox();
             panel6 = new Panel();
+            userControlClient1 = new User_Control.UserControlClient();
             userControlSetting1 = new User_Control.UserControlSetting();
             timer1 = new System.Windows.Forms.Timer(components);
-            userControlClient1 = new User_Control.UserControlClient();
+            userControlRoom1 = new User_Control.UserControlRoom();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -158,7 +159,6 @@
             buttonDashboard.FlatAppearance.BorderSize = 0;
             buttonDashboard.FlatStyle = FlatStyle.Flat;
             buttonDashboard.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonDashboard.Image = Properties.Resources.icons8_macbook_de_performance_50;
             buttonDashboard.ImageAlign = ContentAlignment.MiddleLeft;
             buttonDashboard.Location = new Point(29, 239);
             buttonDashboard.Name = "buttonDashboard";
@@ -186,7 +186,7 @@
             label3.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(9, 86);
             label3.Name = "label3";
-            label3.Size = new Size(327, 39);
+            label3.Size = new Size(276, 34);
             label3.TabIndex = 0;
             label3.Text = "Hotel Management";
             // 
@@ -196,7 +196,7 @@
             label2.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(92, 119);
             label2.Name = "label2";
-            label2.Size = new Size(130, 39);
+            label2.Size = new Size(110, 34);
             label2.TabIndex = 0;
             label2.Text = "System";
             // 
@@ -225,7 +225,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(198, 16);
             label1.Name = "label1";
-            label1.Size = new Size(865, 24);
+            label1.Size = new Size(745, 21);
             label1.TabIndex = 1;
             label1.Text = "ISSAME IMAD - AGOUMI MOHAMMED AMINE - MAAROUFI AMINE - GHAOURI ZOUHAIR";
             // 
@@ -248,7 +248,7 @@
             labelUsername.ForeColor = Color.White;
             labelUsername.Location = new Point(152, 119);
             labelUsername.Name = "labelUsername";
-            labelUsername.Size = new Size(31, 34);
+            labelUsername.Size = new Size(25, 27);
             labelUsername.TabIndex = 2;
             labelUsername.Text = "?";
             // 
@@ -259,7 +259,7 @@
             label4.ForeColor = Color.White;
             label4.Location = new Point(19, 119);
             label4.Name = "label4";
-            label4.Size = new Size(153, 34);
+            label4.Size = new Size(127, 27);
             label4.TabIndex = 1;
             label4.Text = "Welcome:";
             // 
@@ -282,7 +282,7 @@
             labelDateTime.ForeColor = Color.FromArgb(193, 154, 107);
             labelDateTime.Location = new Point(19, 47);
             labelDateTime.Name = "labelDateTime";
-            labelDateTime.Size = new Size(25, 28);
+            labelDateTime.Size = new Size(21, 23);
             labelDateTime.TabIndex = 0;
             labelDateTime.Text = "?";
             // 
@@ -298,7 +298,7 @@
             linkLabelLogout.LinkColor = Color.FromArgb(175, 130, 96);
             linkLabelLogout.Location = new Point(1141, 47);
             linkLabelLogout.Name = "linkLabelLogout";
-            linkLabelLogout.Size = new Size(86, 25);
+            linkLabelLogout.Size = new Size(68, 19);
             linkLabelLogout.TabIndex = 0;
             linkLabelLogout.TabStop = true;
             linkLabelLogout.Text = "Log out";
@@ -308,7 +308,6 @@
             // pictureBox2
             // 
             pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox2.Image = Properties.Resources.pngtree_vector_user_young_boy_avatar_icon_png_image_4827810;
             pictureBox2.Location = new Point(1070, 5);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(65, 65);
@@ -326,6 +325,18 @@
             panel6.Size = new Size(1221, 579);
             panel6.TabIndex = 0;
             // 
+            // userControlClient1
+            // 
+            userControlClient1.BackColor = Color.White;
+            userControlClient1.Dock = DockStyle.Fill;
+            userControlClient1.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            userControlClient1.Location = new Point(0, 0);
+            userControlClient1.Margin = new Padding(3, 2, 3, 2);
+            userControlClient1.Name = "userControlClient1";
+            userControlClient1.Size = new Size(1221, 579);
+            userControlClient1.TabIndex = 0;
+            userControlClient1.Visible = false;
+            // 
             // userControlSetting1
             // 
             userControlSetting1.BackColor = Color.White;
@@ -342,24 +353,24 @@
             // 
             timer1.Tick += timer1_Tick;
             // 
-            // userControlClient1
+            // userControlRoom1
             // 
-            userControlClient1.BackColor = Color.White;
-            userControlClient1.Dock = DockStyle.Fill;
-            userControlClient1.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            userControlClient1.Location = new Point(0, 0);
-            userControlClient1.Margin = new Padding(3, 2, 3, 2);
-            userControlClient1.Name = "userControlClient1";
-            userControlClient1.Size = new Size(1221, 579);
-            userControlClient1.TabIndex = 0;
-            userControlClient1.Visible = false;
+            userControlRoom1.BackColor = Color.White;
+            userControlRoom1.Dock = DockStyle.Fill;
+            userControlRoom1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            userControlRoom1.Location = new Point(315, 192);
+            userControlRoom1.Name = "userControlRoom1";
+            userControlRoom1.Size = new Size(1221, 579);
+            userControlRoom1.TabIndex = 0;
+            userControlRoom1.Visible = false;
             // 
             // FormDashboard
             // 
-            AutoScaleDimensions = new SizeF(12F, 23F);
+            AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1536, 826);
+            Controls.Add(userControlRoom1);
             Controls.Add(panel6);
             Controls.Add(panel4);
             Controls.Add(panel2);
@@ -413,5 +424,6 @@
         private System.Windows.Forms.Timer timer1;
         private User_Control.UserControlSetting userControlSetting1;
         private User_Control.UserControlClient userControlClient1;
+        private User_Control.UserControlRoom userControlRoom1;
     }
 }
