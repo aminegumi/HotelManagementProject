@@ -244,6 +244,109 @@ namespace HotelRes1
             }
         }
 
+        public bool AddRoom(string RoomType, string RoomPhone, string RoomFree)
+        {
+            try
+            {
+                connection.Open();
+                string query = "INSERT INTO room_table (Room_Type, Room_Phone, Room_Free) VALUES (@RoomType, @RoomPhone, @RoomFree)";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@RoomType", RoomType);
+                    cmd.Parameters.AddWithValue("@RoomPhone", RoomPhone);
+                    cmd.Parameters.AddWithValue("@RoomFree", RoomFree);
+
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public void DisplayAndSearchRoom(string query, DataGridView dataGridView)
+        {
+            try
+            {
+                connection.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    dataGridView.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public bool UpdateRoom(string RoomNo, string RoomType, string RoomPhone, string RoomFree)
+        {
+            try
+            {
+                connection.Open();
+                string query = "UPDATE room_table SET Room_Type = @RoomType, Room_Phone = @RoomPhone, Room_Free = @RoomFree WHERE Room_Number = @RoomNo";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@RoomNo", RoomNo);
+                    cmd.Parameters.AddWithValue("@RoomType", RoomType);
+                    cmd.Parameters.AddWithValue("@RoomPhone", RoomPhone);
+                    cmd.Parameters.AddWithValue("@RoomFree", RoomFree);
+
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+        public bool DeleteRoom(string RoomNo)
+        {
+            try
+            {
+                connection.Open();
+                string query = "DELETE FROM room_table WHERE Room_Number = @RoomNo";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@RoomNo", RoomNo);
+
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
 
     }
 }
