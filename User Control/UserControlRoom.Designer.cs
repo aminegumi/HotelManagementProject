@@ -93,7 +93,7 @@
             tabPageAddRoom.Location = new Point(4, 4);
             tabPageAddRoom.Name = "tabPageAddRoom";
             tabPageAddRoom.Padding = new Padding(3);
-            tabPageAddRoom.Size = new Size(1554, 641);
+            tabPageAddRoom.Size = new Size(1554, 640);
             tabPageAddRoom.TabIndex = 0;
             tabPageAddRoom.Text = "Add Room";
             tabPageAddRoom.UseVisualStyleBackColor = true;
@@ -104,7 +104,7 @@
             radioButtonNo.AutoSize = true;
             radioButtonNo.Location = new Point(160, 262);
             radioButtonNo.Name = "radioButtonNo";
-            radioButtonNo.Size = new Size(51, 24);
+            radioButtonNo.Size = new Size(60, 25);
             radioButtonNo.TabIndex = 13;
             radioButtonNo.TabStop = true;
             radioButtonNo.Text = "No";
@@ -115,7 +115,7 @@
             radioButtonYes.AutoSize = true;
             radioButtonYes.Location = new Point(160, 232);
             radioButtonYes.Name = "radioButtonYes";
-            radioButtonYes.Size = new Size(53, 24);
+            radioButtonYes.Size = new Size(65, 25);
             radioButtonYes.TabIndex = 13;
             radioButtonYes.TabStop = true;
             radioButtonYes.Text = "Yes";
@@ -131,8 +131,9 @@
             comboBoxType.Items.AddRange(new object[] { "Single", "Double", "Family", "Suite" });
             comboBoxType.Location = new Point(76, 147);
             comboBoxType.Name = "comboBoxType";
-            comboBoxType.Size = new Size(330, 28);
+            comboBoxType.Size = new Size(330, 29);
             comboBoxType.TabIndex = 12;
+            comboBoxType.SelectedIndexChanged += comboBoxType_SelectedIndexChanged;
             // 
             // button1
             // 
@@ -156,7 +157,7 @@
             textBoxPhoneNo.Anchor = AnchorStyles.None;
             textBoxPhoneNo.Location = new Point(559, 147);
             textBoxPhoneNo.Name = "textBoxPhoneNo";
-            textBoxPhoneNo.Size = new Size(330, 26);
+            textBoxPhoneNo.Size = new Size(330, 30);
             textBoxPhoneNo.TabIndex = 10;
             // 
             // label4
@@ -166,7 +167,7 @@
             label4.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.Location = new Point(559, 110);
             label4.Name = "label4";
-            label4.Size = new Size(95, 19);
+            label4.Size = new Size(111, 23);
             label4.TabIndex = 9;
             label4.Text = "Phone No:";
             // 
@@ -177,7 +178,7 @@
             label7.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.Location = new Point(76, 250);
             label7.Name = "label7";
-            label7.Size = new Size(49, 19);
+            label7.Size = new Size(58, 23);
             label7.TabIndex = 7;
             label7.Text = "Free:";
             // 
@@ -188,7 +189,7 @@
             label5.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.Location = new Point(76, 110);
             label5.Name = "label5";
-            label5.Size = new Size(53, 19);
+            label5.Size = new Size(62, 23);
             label5.TabIndex = 7;
             label5.Text = "Type:";
             // 
@@ -200,7 +201,7 @@
             label6.ForeColor = Color.FromArgb(175, 130, 96);
             label6.Location = new Point(6, 3);
             label6.Name = "label6";
-            label6.Size = new Size(118, 23);
+            label6.Size = new Size(138, 26);
             label6.TabIndex = 6;
             label6.Text = "Add Room :";
             // 
@@ -213,7 +214,7 @@
             tabPageSearchRoom.Location = new Point(4, 4);
             tabPageSearchRoom.Name = "tabPageSearchRoom";
             tabPageSearchRoom.Padding = new Padding(3);
-            tabPageSearchRoom.Size = new Size(1554, 641);
+            tabPageSearchRoom.Size = new Size(1554, 640);
             tabPageSearchRoom.TabIndex = 1;
             tabPageSearchRoom.Text = "Search Room";
             tabPageSearchRoom.UseVisualStyleBackColor = true;
@@ -227,7 +228,7 @@
             dataGridViewRoom.Anchor = AnchorStyles.None;
             dataGridViewRoom.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewRoom.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridViewRoom.Location = new Point(46, 246);
+            dataGridViewRoom.Location = new Point(46, 268);
             dataGridViewRoom.Name = "dataGridViewRoom";
             dataGridViewRoom.ReadOnly = true;
             dataGridViewRoom.RowHeadersWidth = 62;
@@ -274,9 +275,9 @@
             // textBoxSearchRoomNo
             // 
             textBoxSearchRoomNo.Anchor = AnchorStyles.None;
-            textBoxSearchRoomNo.Location = new Point(579, 118);
+            textBoxSearchRoomNo.Location = new Point(579, 140);
             textBoxSearchRoomNo.Name = "textBoxSearchRoomNo";
-            textBoxSearchRoomNo.Size = new Size(330, 26);
+            textBoxSearchRoomNo.Size = new Size(330, 30);
             textBoxSearchRoomNo.TabIndex = 12;
             textBoxSearchRoomNo.TextChanged += textBoxSearchRoomNo_TextChanged;
             // 
@@ -285,9 +286,9 @@
             label8.Anchor = AnchorStyles.None;
             label8.AutoSize = true;
             label8.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(579, 81);
+            label8.Location = new Point(579, 103);
             label8.Name = "label8";
-            label8.Size = new Size(91, 19);
+            label8.Size = new Size(107, 23);
             label8.TabIndex = 11;
             label8.Text = "Room No:";
             // 
@@ -297,9 +298,9 @@
             label9.AutoSize = true;
             label9.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.FromArgb(175, 130, 96);
-            label9.Location = new Point(6, 3);
+            label9.Location = new Point(6, 25);
             label9.Name = "label9";
-            label9.Size = new Size(137, 23);
+            label9.Size = new Size(160, 26);
             label9.TabIndex = 10;
             label9.Text = "Search Room:";
             // 
@@ -318,7 +319,7 @@
             tabPageUpdateAndDeleteRoom.Location = new Point(4, 4);
             tabPageUpdateAndDeleteRoom.Name = "tabPageUpdateAndDeleteRoom";
             tabPageUpdateAndDeleteRoom.Padding = new Padding(3);
-            tabPageUpdateAndDeleteRoom.Size = new Size(1554, 641);
+            tabPageUpdateAndDeleteRoom.Size = new Size(1554, 636);
             tabPageUpdateAndDeleteRoom.TabIndex = 2;
             tabPageUpdateAndDeleteRoom.Text = "Update and Delete Room";
             tabPageUpdateAndDeleteRoom.UseVisualStyleBackColor = true;
@@ -328,7 +329,7 @@
             radioButtonNo1.AutoSize = true;
             radioButtonNo1.Location = new Point(157, 262);
             radioButtonNo1.Name = "radioButtonNo1";
-            radioButtonNo1.Size = new Size(51, 24);
+            radioButtonNo1.Size = new Size(60, 25);
             radioButtonNo1.TabIndex = 21;
             radioButtonNo1.TabStop = true;
             radioButtonNo1.Text = "No";
@@ -339,7 +340,7 @@
             radioButtonYes1.AutoSize = true;
             radioButtonYes1.Location = new Point(157, 232);
             radioButtonYes1.Name = "radioButtonYes1";
-            radioButtonYes1.Size = new Size(53, 24);
+            radioButtonYes1.Size = new Size(65, 25);
             radioButtonYes1.TabIndex = 22;
             radioButtonYes1.TabStop = true;
             radioButtonYes1.Text = "Yes";
@@ -353,9 +354,9 @@
             comboBoxType1.FlatStyle = FlatStyle.Flat;
             comboBoxType1.FormattingEnabled = true;
             comboBoxType1.Items.AddRange(new object[] { "Single", "Double", "Family", "Suite" });
-            comboBoxType1.Location = new Point(73, 147);
+            comboBoxType1.Location = new Point(73, 153);
             comboBoxType1.Name = "comboBoxType1";
-            comboBoxType1.Size = new Size(330, 28);
+            comboBoxType1.Size = new Size(330, 29);
             comboBoxType1.TabIndex = 20;
             // 
             // buttonDelete
@@ -367,7 +368,7 @@
             buttonDelete.FlatStyle = FlatStyle.Flat;
             buttonDelete.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonDelete.ForeColor = Color.White;
-            buttonDelete.Location = new Point(224, 343);
+            buttonDelete.Location = new Point(224, 349);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(145, 45);
             buttonDelete.TabIndex = 19;
@@ -384,7 +385,7 @@
             buttonUpdate.FlatStyle = FlatStyle.Flat;
             buttonUpdate.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonUpdate.ForeColor = Color.White;
-            buttonUpdate.Location = new Point(73, 343);
+            buttonUpdate.Location = new Point(73, 349);
             buttonUpdate.Name = "buttonUpdate";
             buttonUpdate.Size = new Size(145, 45);
             buttonUpdate.TabIndex = 19;
@@ -395,9 +396,9 @@
             // textBoxPhoneNo1
             // 
             textBoxPhoneNo1.Anchor = AnchorStyles.None;
-            textBoxPhoneNo1.Location = new Point(556, 147);
+            textBoxPhoneNo1.Location = new Point(556, 153);
             textBoxPhoneNo1.Name = "textBoxPhoneNo1";
-            textBoxPhoneNo1.Size = new Size(330, 26);
+            textBoxPhoneNo1.Size = new Size(330, 30);
             textBoxPhoneNo1.TabIndex = 18;
             // 
             // label1
@@ -405,9 +406,9 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(556, 110);
+            label1.Location = new Point(556, 116);
             label1.Name = "label1";
-            label1.Size = new Size(95, 19);
+            label1.Size = new Size(111, 23);
             label1.TabIndex = 17;
             label1.Text = "Phone No:";
             // 
@@ -416,9 +417,9 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(73, 250);
+            label2.Location = new Point(73, 256);
             label2.Name = "label2";
-            label2.Size = new Size(49, 19);
+            label2.Size = new Size(58, 23);
             label2.TabIndex = 15;
             label2.Text = "Free:";
             // 
@@ -427,9 +428,9 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(73, 110);
+            label3.Location = new Point(73, 116);
             label3.Name = "label3";
-            label3.Size = new Size(53, 19);
+            label3.Size = new Size(62, 23);
             label3.TabIndex = 16;
             label3.Text = "Type:";
             // 
@@ -439,15 +440,15 @@
             label10.AutoSize = true;
             label10.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.FromArgb(175, 130, 96);
-            label10.Location = new Point(3, 3);
+            label10.Location = new Point(3, 9);
             label10.Name = "label10";
-            label10.Size = new Size(255, 23);
+            label10.Size = new Size(296, 26);
             label10.TabIndex = 14;
             label10.Text = "Update and Delete Room :";
             // 
             // UserControlRoom
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(tabControlRoom);

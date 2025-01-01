@@ -24,7 +24,7 @@ namespace HotelRes1.User_Control
 
         public void Clear()
         {
-            comboBoxType.SelectedIndex = -1;
+            comboBoxType.SelectedIndex = 0;
             textBoxPhoneNo.Clear();
             radioButtonYes.Checked = false;
             radioButtonNo.Checked = false;
@@ -33,7 +33,7 @@ namespace HotelRes1.User_Control
 
         private void Clear1()
         {
-            comboBoxType1.SelectedIndex = -1;
+            comboBoxType1.SelectedIndex = 0;
             textBoxPhoneNo1.Clear();
             radioButtonYes1.Checked = false;
             radioButtonNo1.Checked = false;
@@ -48,7 +48,7 @@ namespace HotelRes1.User_Control
                 Free = "No";
             bool check;
 
-            if (comboBoxType.SelectedIndex == -1 || textBoxPhoneNo.Text.Trim() == string.Empty || Free == "")
+            if (comboBoxType.SelectedIndex == 0 || textBoxPhoneNo.Text.Trim() == string.Empty || Free == "")
             {
                 MessageBox.Show("Please fill all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -88,7 +88,7 @@ namespace HotelRes1.User_Control
 
         private void dataGridViewRoom_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
+            if (e.RowIndex != 0)
             {
                 DataGridViewRow row = dataGridViewRoom.Rows[e.RowIndex];
                 No = row.Cells[0].Value.ToString();
@@ -111,7 +111,7 @@ namespace HotelRes1.User_Control
             bool check;
             if (No != "")
             {
-                if (comboBoxType1.SelectedIndex == -1 || textBoxPhoneNo1.Text.Trim() == string.Empty || Free == "")
+                if (comboBoxType1.SelectedIndex == 0 || textBoxPhoneNo1.Text.Trim() == string.Empty || Free == "")
                 {
                     MessageBox.Show("Please fill all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -140,7 +140,7 @@ namespace HotelRes1.User_Control
             bool check;
             if (No != "")
             {
-                if (comboBoxType1.SelectedIndex == -1 || textBoxPhoneNo1.Text.Trim() == string.Empty || Free == "")
+                if (comboBoxType1.SelectedIndex == 0 || textBoxPhoneNo1.Text.Trim() == string.Empty || Free == "")
                 {
                     MessageBox.Show("Please fill all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -162,6 +162,11 @@ namespace HotelRes1.User_Control
             {
                 MessageBox.Show("Please first select row from table.", "Selection of row", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+        }
+
+        private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

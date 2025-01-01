@@ -232,7 +232,7 @@
             dataGridViewClient.Anchor = AnchorStyles.None;
             dataGridViewClient.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewClient.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
-            dataGridViewClient.Location = new Point(43, 246);
+            dataGridViewClient.Location = new Point(43, 249);
             dataGridViewClient.Name = "dataGridViewClient";
             dataGridViewClient.ReadOnly = true;
             dataGridViewClient.RowHeadersWidth = 62;
@@ -288,7 +288,7 @@
             // textBoxSearchPhoneNo
             // 
             textBoxSearchPhoneNo.Anchor = AnchorStyles.None;
-            textBoxSearchPhoneNo.Location = new Point(576, 133);
+            textBoxSearchPhoneNo.Location = new Point(576, 136);
             textBoxSearchPhoneNo.Name = "textBoxSearchPhoneNo";
             textBoxSearchPhoneNo.Size = new Size(330, 32);
             textBoxSearchPhoneNo.TabIndex = 8;
@@ -299,7 +299,7 @@
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(576, 96);
+            label6.Location = new Point(576, 99);
             label6.Name = "label6";
             label6.Size = new Size(111, 23);
             label6.TabIndex = 7;
@@ -311,7 +311,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.FromArgb(175, 130, 96);
-            label7.Location = new Point(3, 18);
+            label7.Location = new Point(3, 21);
             label7.Name = "label7";
             label7.Size = new Size(159, 26);
             label7.TabIndex = 6;
@@ -333,7 +333,7 @@
             tabPageUpdateAndDeleteClient.Location = new Point(4, 4);
             tabPageUpdateAndDeleteClient.Name = "tabPageUpdateAndDeleteClient";
             tabPageUpdateAndDeleteClient.Padding = new Padding(3);
-            tabPageUpdateAndDeleteClient.Size = new Size(1554, 636);
+            tabPageUpdateAndDeleteClient.Size = new Size(1554, 638);
             tabPageUpdateAndDeleteClient.TabIndex = 2;
             tabPageUpdateAndDeleteClient.Text = "Update and Delete Client";
             tabPageUpdateAndDeleteClient.UseVisualStyleBackColor = true;
@@ -348,7 +348,7 @@
             buttonDelete.FlatStyle = FlatStyle.Flat;
             buttonDelete.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonDelete.ForeColor = Color.White;
-            buttonDelete.Location = new Point(527, 508);
+            buttonDelete.Location = new Point(527, 518);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(145, 45);
             buttonDelete.TabIndex = 26;
@@ -360,7 +360,7 @@
             // textBoxAddress1
             // 
             textBoxAddress1.Anchor = AnchorStyles.None;
-            textBoxAddress1.Location = new Point(342, 379);
+            textBoxAddress1.Location = new Point(342, 389);
             textBoxAddress1.Multiline = true;
             textBoxAddress1.Name = "textBoxAddress1";
             textBoxAddress1.Size = new Size(813, 90);
@@ -371,7 +371,7 @@
             label8.Anchor = AnchorStyles.None;
             label8.AutoSize = true;
             label8.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(342, 342);
+            label8.Location = new Point(342, 352);
             label8.Name = "label8";
             label8.Size = new Size(94, 23);
             label8.TabIndex = 24;
@@ -380,7 +380,7 @@
             // textBoxPhoneNo1
             // 
             textBoxPhoneNo1.Anchor = AnchorStyles.None;
-            textBoxPhoneNo1.Location = new Point(342, 284);
+            textBoxPhoneNo1.Location = new Point(342, 294);
             textBoxPhoneNo1.Name = "textBoxPhoneNo1";
             textBoxPhoneNo1.Size = new Size(330, 32);
             textBoxPhoneNo1.TabIndex = 23;
@@ -390,7 +390,7 @@
             label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
             label9.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(342, 247);
+            label9.Location = new Point(342, 257);
             label9.Name = "label9";
             label9.Size = new Size(111, 23);
             label9.TabIndex = 22;
@@ -405,7 +405,7 @@
             buttonUpdate.FlatStyle = FlatStyle.Flat;
             buttonUpdate.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonUpdate.ForeColor = Color.White;
-            buttonUpdate.Location = new Point(342, 508);
+            buttonUpdate.Location = new Point(342, 518);
             buttonUpdate.Name = "buttonUpdate";
             buttonUpdate.Size = new Size(145, 45);
             buttonUpdate.TabIndex = 21;
@@ -416,7 +416,7 @@
             // textBoxLastName1
             // 
             textBoxLastName1.Anchor = AnchorStyles.None;
-            textBoxLastName1.Location = new Point(825, 194);
+            textBoxLastName1.Location = new Point(825, 204);
             textBoxLastName1.Name = "textBoxLastName1";
             textBoxLastName1.Size = new Size(330, 32);
             textBoxLastName1.TabIndex = 20;
@@ -426,7 +426,7 @@
             label10.Anchor = AnchorStyles.None;
             label10.AutoSize = true;
             label10.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(825, 157);
+            label10.Location = new Point(825, 167);
             label10.Name = "label10";
             label10.Size = new Size(119, 23);
             label10.TabIndex = 19;
@@ -435,7 +435,7 @@
             // textBoxFirstName1
             // 
             textBoxFirstName1.Anchor = AnchorStyles.None;
-            textBoxFirstName1.Location = new Point(342, 194);
+            textBoxFirstName1.Location = new Point(342, 204);
             textBoxFirstName1.Name = "textBoxFirstName1";
             textBoxFirstName1.Size = new Size(330, 32);
             textBoxFirstName1.TabIndex = 18;
@@ -445,7 +445,7 @@
             label11.Anchor = AnchorStyles.None;
             label11.AutoSize = true;
             label11.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(342, 157);
+            label11.Location = new Point(342, 167);
             label11.Name = "label11";
             label11.Size = new Size(118, 23);
             label11.TabIndex = 17;
@@ -457,7 +457,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.FromArgb(175, 130, 96);
-            label12.Location = new Point(6, 17);
+            label12.Location = new Point(6, 27);
             label12.Name = "label12";
             label12.Size = new Size(289, 26);
             label12.TabIndex = 16;

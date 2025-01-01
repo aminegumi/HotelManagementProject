@@ -123,9 +123,49 @@ namespace HotelRes1.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap OIP {
+            get {
+                object obj = ResourceManager.GetObject("OIP", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OIP1 {
+            get {
+                object obj = ResourceManager.GetObject("OIP1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngtree_vector_user_young_boy_avatar_icon_png_image_4827810 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-vector-user-young-boy-avatar-icon-png-image_4827810", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rooms_icon_style_free_vector {
+            get {
+                object obj = ResourceManager.GetObject("rooms-icon-style-free-vector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_icon_vector {
+            get {
+                object obj = ResourceManager.GetObject("user-icon-vector", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
