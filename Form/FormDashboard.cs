@@ -53,6 +53,11 @@ namespace HotelRes1
             userControlSetting1.Hide();
             userControlClient1.Hide();
             userControlRoom1.Hide();
+            userControlDashboard1.User();
+            userControlDashboard1.Client();
+            userControlDashboard1.Room();
+            userControlDashboard1.Show();
+
         }
 
         private void buttonClient_Click(object sender, EventArgs e)
@@ -61,6 +66,7 @@ namespace HotelRes1
             userControlClient1.Clear();
             userControlClient1.Show();
             userControlRoom1.Hide();
+            userControlDashboard1.Hide();
         }
 
         private void buttonRoom_Click(object sender, EventArgs e)
@@ -70,6 +76,7 @@ namespace HotelRes1
             userControlSetting1.Hide();
             userControlRoom1.Clear();
             userControlRoom1.Show();
+            userControlDashboard1.Hide();
 
 
         }
@@ -80,6 +87,7 @@ namespace HotelRes1
             userControlClient1.Hide();
             userControlSetting1.Hide();
             userControlRoom1.Hide();
+            userControlDashboard1.Hide();
         }
 
         private void buttonSetting_Click(object sender, EventArgs e)
@@ -89,6 +97,7 @@ namespace HotelRes1
             userControlSetting1.Show();
             userControlClient1.Hide();
             userControlRoom1.Hide();
+            userControlDashboard1.Hide();
         }
 
         
