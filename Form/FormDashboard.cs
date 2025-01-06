@@ -52,7 +52,8 @@ namespace HotelRes1
             MovePanel(buttonDashboard);
             userControlSetting1.Hide();
             userControlClient1.Hide();
-            userControlRoom1.Hide();
+            userControlRoom2.Hide();
+            userControlReservation1.Hide();
         }
 
         private void buttonClient_Click(object sender, EventArgs e)
@@ -60,7 +61,8 @@ namespace HotelRes1
             MovePanel(buttonClient);
             userControlClient1.Clear();
             userControlClient1.Show();
-            userControlRoom1.Hide();
+            userControlRoom2.Hide();
+            userControlReservation1.Hide();
         }
 
         private void buttonRoom_Click(object sender, EventArgs e)
@@ -68,8 +70,9 @@ namespace HotelRes1
             MovePanel(buttonRoom);
             userControlClient1.Hide();
             userControlSetting1.Hide();
-            userControlRoom1.Clear();
-            userControlRoom1.Show();
+            userControlRoom2.Clear();
+            userControlRoom2.Show();
+            userControlReservation1.Hide();
 
 
         }
@@ -79,7 +82,9 @@ namespace HotelRes1
             MovePanel(buttonReservation);
             userControlClient1.Hide();
             userControlSetting1.Hide();
-            userControlRoom1.Hide();
+            userControlRoom2.Hide();
+            userControlReservation1.Clear();
+            userControlReservation1.Show();
         }
 
         private void buttonSetting_Click(object sender, EventArgs e)
@@ -88,7 +93,8 @@ namespace HotelRes1
             userControlSetting1.Clear();
             userControlSetting1.Show();
             userControlClient1.Hide();
-            userControlRoom1.Hide();
+            userControlRoom2.Hide();
+            userControlReservation1.Hide();
         }
 
         

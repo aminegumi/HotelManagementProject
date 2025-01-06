@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace HotelRes1
 {
@@ -346,6 +347,212 @@ namespace HotelRes1
                 connection.Close();
             }
         }
+
+
+        public bool AddReservation(string roomId, string roomType, string clientId, string reservationIn, string reservationOut)
+        {
+            try
+            {
+                connection.Open();
+                string query = @"
+            INSERT INTO reservation_table 
+            (Reservation_Room_Number, Reservation_Room_Type, Reservation_Client_ID, Reservation_In, Reservation_Out) 
+            VALUES (@roomId, @roomType, @clientId, @reservationIn, @reservationOut)";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@roomId", roomId);
+                    cmd.Parameters.AddWithValue("@roomType", roomType);
+                    cmd.Parameters.AddWithValue("@clientId", clientId);
+                    cmd.Parameters.AddWithValue("@reservationIn", reservationIn);
+                    cmd.Parameters.AddWithValue("@reservationOut", reservationOut);
+
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public bool UpdateRoomFree(string roomNumber)
+        {
+            try
+            {
+                connection.Open();
+                string query = "UPDATE room_table SET Room_Free = 'No' WHERE Room_Number = @roomNumber AND Room_Free = 'Yes'";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@roomNumber", roomNumber);
+
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public bool UpdateRoomFreeToYes(string roomNumber)
+        {
+            try
+            {
+                connection.Open();
+                string query = "UPDATE room_table SET Room_Free = 'Yes' WHERE Room_Number = @roomNumber AND Room_Free = 'No'";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@roomNumber", roomNumber);
+
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0; // True if a row was updated
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+
+
+        public void DisplayAndSearchReservation(string query, DataGridView dataGridView)
+        {
+            try
+            {
+                connection.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    dataGridView.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public bool UpdateReservation(string reservationId, string roomType, string roomNumber, string clientId, string reservationIn, string reservationOut)
+        {
+            try
+            {
+                connection.Open();
+                string query = "UPDATE reservation_table SET Reservation_Room_Type = @roomType, Reservation_Room_Number = @roomNumber, Reservation_Client_ID = @clientId, Reservation_In = @reservationIn, Reservation_Out = @reservationOut WHERE Reservation_ID = @reservationId";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@reservationId", reservationId);
+                    cmd.Parameters.AddWithValue("@roomType", roomType);
+                    cmd.Parameters.AddWithValue("@roomNumber", roomNumber);
+                    cmd.Parameters.AddWithValue("@clientId", clientId);
+                    cmd.Parameters.AddWithValue("@reservationIn", reservationIn);
+                    cmd.Parameters.AddWithValue("@reservationOut", reservationOut);
+
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+        public bool DeleteReservation(string reservationId)
+        {
+            try
+            {
+                connection.Open();
+                string query = "DELETE FROM reservation_table WHERE Reservation_ID = @reservationId";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@reservationId", reservationId);
+
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public void RoomTypeAndNo(string query, ComboBox comboBox)
+        {
+            try
+            {
+                connection.Open(); 
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    object firstItem = null;
+                    if (comboBox.Items.Count > 0)
+                    {
+                        firstItem = comboBox.Items[0];
+                    }
+
+                    comboBox.Items.Clear();
+                    if (firstItem != null)
+                    {
+                        comboBox.Items.Add(firstItem);
+                    }
+                    while (reader.Read())
+                    {
+                        comboBox.Items.Add(reader["Room_Number"].ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close(); 
+            }
+        }
+
+
+
+
 
 
     }

@@ -51,10 +51,12 @@
             linkLabelLogout = new LinkLabel();
             pictureBox2 = new PictureBox();
             panel6 = new Panel();
-            userControlClient1 = new User_Control.UserControlClient();
+            userControlReservation1 = new User_Control.UserControlReservation();
             userControlSetting1 = new User_Control.UserControlSetting();
+            userControlClient1 = new User_Control.UserControlClient();
             timer1 = new System.Windows.Forms.Timer(components);
             userControlRoom1 = new User_Control.UserControlRoom();
+            userControlRoom2 = new User_Control.UserControlRoom();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -317,25 +319,27 @@
             // 
             // panel6
             // 
-            panel6.Controls.Add(userControlClient1);
+            panel6.Controls.Add(userControlRoom2);
+            panel6.Controls.Add(userControlReservation1);
             panel6.Controls.Add(userControlSetting1);
+            panel6.Controls.Add(userControlClient1);
             panel6.Dock = DockStyle.Fill;
             panel6.Location = new Point(315, 192);
             panel6.Name = "panel6";
             panel6.Size = new Size(1221, 579);
             panel6.TabIndex = 0;
             // 
-            // userControlClient1
+            // userControlReservation1
             // 
-            userControlClient1.BackColor = Color.White;
-            userControlClient1.Dock = DockStyle.Fill;
-            userControlClient1.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            userControlClient1.Location = new Point(0, 0);
-            userControlClient1.Margin = new Padding(3, 2, 3, 2);
-            userControlClient1.Name = "userControlClient1";
-            userControlClient1.Size = new Size(1221, 579);
-            userControlClient1.TabIndex = 0;
-            userControlClient1.Visible = false;
+            userControlReservation1.BackColor = Color.White;
+            userControlReservation1.Dock = DockStyle.Fill;
+            userControlReservation1.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            userControlReservation1.Location = new Point(0, 0);
+            userControlReservation1.Margin = new Padding(4, 3, 4, 3);
+            userControlReservation1.Name = "userControlReservation1";
+            userControlReservation1.Size = new Size(1221, 579);
+            userControlReservation1.TabIndex = 0;
+            userControlReservation1.Visible = false;
             // 
             // userControlSetting1
             // 
@@ -349,6 +353,18 @@
             userControlSetting1.TabIndex = 0;
             userControlSetting1.Visible = false;
             // 
+            // userControlClient1
+            // 
+            userControlClient1.BackColor = Color.White;
+            userControlClient1.Dock = DockStyle.Fill;
+            userControlClient1.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            userControlClient1.Location = new Point(0, 0);
+            userControlClient1.Margin = new Padding(3, 2, 3, 2);
+            userControlClient1.Name = "userControlClient1";
+            userControlClient1.Size = new Size(1221, 579);
+            userControlClient1.TabIndex = 0;
+            userControlClient1.Visible = false;
+            // 
             // timer1
             // 
             timer1.Tick += timer1_Tick;
@@ -358,11 +374,22 @@
             userControlRoom1.BackColor = Color.White;
             userControlRoom1.Dock = DockStyle.Fill;
             userControlRoom1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            userControlRoom1.Location = new Point(315, 192);
+            userControlRoom1.Location = new Point(0, 0);
             userControlRoom1.Name = "userControlRoom1";
-            userControlRoom1.Size = new Size(1221, 579);
+            userControlRoom1.Size = new Size(1536, 826);
             userControlRoom1.TabIndex = 0;
             userControlRoom1.Visible = false;
+            // 
+            // userControlRoom2
+            // 
+            userControlRoom2.BackColor = Color.White;
+            userControlRoom2.Dock = DockStyle.Fill;
+            userControlRoom2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            userControlRoom2.Location = new Point(0, 0);
+            userControlRoom2.Name = "userControlRoom2";
+            userControlRoom2.Size = new Size(1221, 579);
+            userControlRoom2.TabIndex = 0;
+            userControlRoom2.Visible = false;
             // 
             // FormDashboard
             // 
@@ -370,11 +397,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1536, 826);
-            Controls.Add(userControlRoom1);
             Controls.Add(panel6);
             Controls.Add(panel4);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(userControlRoom1);
             Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
@@ -425,5 +452,7 @@
         private User_Control.UserControlSetting userControlSetting1;
         private User_Control.UserControlClient userControlClient1;
         private User_Control.UserControlRoom userControlRoom1;
+        private User_Control.UserControlReservation userControlReservation1;
+        private User_Control.UserControlRoom userControlRoom2;
     }
 }
