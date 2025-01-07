@@ -189,7 +189,7 @@
             label3.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(9, 86);
             label3.Name = "label3";
-            label3.Size = new Size(276, 34);
+            label3.Size = new Size(327, 39);
             label3.TabIndex = 0;
             label3.Text = "Hotel Management";
             // 
@@ -199,7 +199,7 @@
             label2.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(92, 119);
             label2.Name = "label2";
-            label2.Size = new Size(110, 34);
+            label2.Size = new Size(130, 39);
             label2.TabIndex = 0;
             label2.Text = "System";
             // 
@@ -228,7 +228,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(198, 16);
             label1.Name = "label1";
-            label1.Size = new Size(745, 21);
+            label1.Size = new Size(865, 24);
             label1.TabIndex = 1;
             label1.Text = "ISSAME IMAD - AGOUMI MOHAMMED AMINE - MAAROUFI AMINE - GHAOURI ZOUHAIR";
             // 
@@ -251,7 +251,7 @@
             labelUsername.ForeColor = Color.White;
             labelUsername.Location = new Point(152, 119);
             labelUsername.Name = "labelUsername";
-            labelUsername.Size = new Size(25, 27);
+            labelUsername.Size = new Size(31, 34);
             labelUsername.TabIndex = 2;
             labelUsername.Text = "?";
             // 
@@ -262,7 +262,7 @@
             label4.ForeColor = Color.White;
             label4.Location = new Point(19, 119);
             label4.Name = "label4";
-            label4.Size = new Size(127, 27);
+            label4.Size = new Size(153, 34);
             label4.TabIndex = 1;
             label4.Text = "Welcome:";
             // 
@@ -285,7 +285,7 @@
             labelDateTime.ForeColor = Color.FromArgb(193, 154, 107);
             labelDateTime.Location = new Point(19, 47);
             labelDateTime.Name = "labelDateTime";
-            labelDateTime.Size = new Size(21, 23);
+            labelDateTime.Size = new Size(25, 28);
             labelDateTime.TabIndex = 0;
             labelDateTime.Text = "?";
             // 
@@ -301,7 +301,7 @@
             linkLabelLogout.LinkColor = Color.FromArgb(175, 130, 96);
             linkLabelLogout.Location = new Point(1141, 47);
             linkLabelLogout.Name = "linkLabelLogout";
-            linkLabelLogout.Size = new Size(68, 19);
+            linkLabelLogout.Size = new Size(86, 25);
             linkLabelLogout.TabIndex = 0;
             linkLabelLogout.TabStop = true;
             linkLabelLogout.Text = "Log out";
@@ -323,6 +323,7 @@
             panel6.Controls.Add(userControlDashboard1);
             panel6.Controls.Add(userControlRoom2);
             panel6.Controls.Add(userControlReservation1);
+            panel6.Controls.Add(userControlDashboard1);
             panel6.Controls.Add(userControlSetting1);
             panel6.Controls.Add(userControlClient1);
             panel6.Dock = DockStyle.Fill;
@@ -406,7 +407,7 @@
             // 
             // FormDashboard
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(12F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1536, 826);
