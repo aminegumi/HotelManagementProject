@@ -142,18 +142,19 @@ namespace HotelRes1
                 connection.Close();
             }
         }
-        public bool AddClient(string firstName, string lastName, string phone, string address)
+        public bool AddClient(string firstName, string lastName, string phone, string address, string email)
         {
             try
             {
                 connection.Open();
-                string query = "INSERT INTO client_table (Client_FirstName, Client_LastName, Client_Phone, Client_Address) VALUES (@firstName, @lastName, @phone, @address)";
+                string query = "INSERT INTO client_table (Client_FirstName, Client_LastName, Client_Phone, Client_Address, Client_Email) VALUES (@firstName, @lastName, @phone, @address, @email)";
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
                     cmd.Parameters.AddWithValue("@firstName", firstName);
                     cmd.Parameters.AddWithValue("@lastName", lastName);
                     cmd.Parameters.AddWithValue("@phone", phone);
                     cmd.Parameters.AddWithValue("@address", address);
+                    cmd.Parameters.AddWithValue("@email", email);
 
                     int result = cmd.ExecuteNonQuery();
                     return result > 0;
@@ -191,12 +192,12 @@ namespace HotelRes1
                 connection.Close();
             }
         }
-        public bool UpdateClient(string id, string firstName, string lastName, string phone, string address)
+        public bool UpdateClient(string id, string firstName, string lastName, string phone, string address, string email)
         {
             try
             {
                 connection.Open();
-                string query = "UPDATE client_table SET Client_FirstName = @firstName, Client_LastName = @lastName, Client_Phone = @phone, Client_Address = @address WHERE Client_ID = @id";
+                string query = "UPDATE client_table SET Client_FirstName = @firstName, Client_LastName = @lastName, Client_Phone = @phone, Client_Address = @address, Client_Email = @email WHERE Client_ID = @id";
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
@@ -204,7 +205,8 @@ namespace HotelRes1
                     cmd.Parameters.AddWithValue("@lastName", lastName);
                     cmd.Parameters.AddWithValue("@phone", phone);
                     cmd.Parameters.AddWithValue("@address", address);
-
+                    cmd.Parameters.AddWithValue("@email", email);
+                        
                     int result = cmd.ExecuteNonQuery();
                     return result > 0;
                 }

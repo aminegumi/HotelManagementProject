@@ -25,6 +25,7 @@ namespace HotelRes1.User_Control
             textBoxLastName.Clear();
             textBoxPhoneNo.Clear();
             textBoxAddress.Clear();
+            textBoxEmail.Clear();
             tabSearchlClient.SelectedTab = tabPageAddClient;
         }
         public void Clear1()
@@ -33,6 +34,7 @@ namespace HotelRes1.User_Control
             textBoxLastName1.Clear();
             textBoxPhoneNo1.Clear();
             textBoxAddress1.Clear();
+            textBoxEmail1.Clear();
             ID = "";
         }
 
@@ -40,13 +42,13 @@ namespace HotelRes1.User_Control
         {
             bool check;
 
-            if (textBoxFirstName.Text.Trim() == string.Empty || textBoxLastName.Text == "" || textBoxPhoneNo.Text == "" || textBoxAddress.Text == "")
+            if (textBoxFirstName.Text.Trim() == string.Empty || textBoxLastName.Text == "" || textBoxPhoneNo.Text == "" || textBoxAddress.Text == "" || textBoxEmail.Text == "")
             {
                 MessageBox.Show("Please fill all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                check = db.AddClient(textBoxFirstName.Text, textBoxLastName.Text.Trim(), textBoxPhoneNo.Text.Trim(), textBoxAddress.Text.Trim());
+                check = db.AddClient(textBoxFirstName.Text, textBoxLastName.Text.Trim(), textBoxPhoneNo.Text.Trim(), textBoxAddress.Text.Trim(), textBoxEmail.Text.Trim());
 
                 if (check)
                 {
@@ -85,13 +87,13 @@ namespace HotelRes1.User_Control
             bool check;
             if (ID != "")
             {
-                if (textBoxFirstName1.Text.Trim() == string.Empty || textBoxLastName1.Text.Trim() == string.Empty || textBoxPhoneNo1.Text.Trim() == string.Empty || textBoxAddress1.Text.Trim() == string.Empty)
+                if (textBoxFirstName1.Text.Trim() == string.Empty || textBoxLastName1.Text.Trim() == string.Empty || textBoxPhoneNo1.Text.Trim() == string.Empty || textBoxAddress1.Text.Trim() == string.Empty || textBoxEmail1.Text.Trim() == string.Empty)
                 {
                     MessageBox.Show("Please fill all the fields", "Require all field", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    check = db.UpdateClient(ID, textBoxFirstName1.Text.Trim(), textBoxLastName1.Text.Trim(), textBoxPhoneNo1.Text.Trim(), textBoxAddress1.Text.Trim());
+                    check = db.UpdateClient(ID, textBoxFirstName1.Text.Trim(), textBoxLastName1.Text.Trim(), textBoxPhoneNo1.Text.Trim(), textBoxAddress1.Text.Trim(), textBoxEmail1.Text.Trim());
                     if (check)
                     {
                         MessageBox.Show("Client updated successfully", "Update Client", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -110,7 +112,7 @@ namespace HotelRes1.User_Control
             bool check;
             if (ID != "")
             {
-                if (textBoxFirstName1.Text.Trim() == string.Empty || textBoxLastName1.Text.Trim() == string.Empty || textBoxPhoneNo1.Text.Trim() == string.Empty || textBoxAddress1.Text.Trim() == string.Empty)
+                if (textBoxFirstName1.Text.Trim() == string.Empty || textBoxLastName1.Text.Trim() == string.Empty || textBoxPhoneNo1.Text.Trim() == string.Empty || textBoxAddress1.Text.Trim() == string.Empty || textBoxEmail1.Text.Trim() == string.Empty)
                 {
                     MessageBox.Show("Please fill all the fields", "Require all field", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -150,6 +152,7 @@ namespace HotelRes1.User_Control
                 textBoxLastName1.Text = row.Cells[2].Value.ToString();
                 textBoxPhoneNo1.Text = row.Cells[3].Value.ToString();
                 textBoxAddress1.Text = row.Cells[4].Value.ToString();
+                textBoxEmail1.Text = row.Cells[5].Value.ToString();
             }
         }
 
