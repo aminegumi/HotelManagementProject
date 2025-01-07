@@ -162,6 +162,7 @@
             buttonDashboard.FlatAppearance.BorderSize = 0;
             buttonDashboard.FlatStyle = FlatStyle.Flat;
             buttonDashboard.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonDashboard.Image = Properties.Resources.icons8_macbook_de_performance_501;
             buttonDashboard.ImageAlign = ContentAlignment.MiddleLeft;
             buttonDashboard.Location = new Point(29, 239);
             buttonDashboard.Name = "buttonDashboard";
@@ -311,6 +312,7 @@
             // pictureBox2
             // 
             pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox2.Image = Properties.Resources.pngtree_vector_user_young_boy_avatar_icon_png_image_48278101;
             pictureBox2.Location = new Point(1070, 5);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(65, 65);

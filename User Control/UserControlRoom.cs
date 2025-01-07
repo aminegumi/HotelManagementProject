@@ -29,6 +29,7 @@ namespace HotelRes1.User_Control
             radioButtonYes.Checked = false;
             radioButtonNo.Checked = false;
             tabControlRoom.SelectedTab = tabPageAddRoom;
+            textBoxPrice.Clear();
         }
 
         private void Clear1()
@@ -38,6 +39,7 @@ namespace HotelRes1.User_Control
             radioButtonYes1.Checked = false;
             radioButtonNo1.Checked = false;
             No = "";
+            textBoxPrice1.Clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,13 +50,13 @@ namespace HotelRes1.User_Control
                 Free = "No";
             bool check;
 
-            if (comboBoxType.SelectedIndex == 0 || textBoxPhoneNo.Text.Trim() == string.Empty || Free == "")
+            if (comboBoxType.SelectedIndex == 0 || textBoxPhoneNo.Text.Trim() == string.Empty || Free == "" || textBoxPrice.Text.Trim() == string.Empty)
             {
                 MessageBox.Show("Please fill all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                check = db.AddRoom(comboBoxType.SelectedItem.ToString(), textBoxPhoneNo.Text.Trim(), Free);
+                check = db.AddRoom(comboBoxType.SelectedItem.ToString(), textBoxPhoneNo.Text.Trim(), Free, textBoxPrice.Text.Trim());
 
                 if (check)
                 {
@@ -99,6 +101,7 @@ namespace HotelRes1.User_Control
                     radioButtonYes1.Checked = true;
                 if (Free == "No")
                     radioButtonNo1.Checked = true;
+                textBoxPrice1.Text = row.Cells[4].Value.ToString();
             }
         }
 
@@ -111,13 +114,13 @@ namespace HotelRes1.User_Control
             bool check;
             if (No != "")
             {
-                if (comboBoxType1.SelectedIndex == -1 || textBoxPhoneNo1.Text.Trim() == string.Empty || Free == "")
+                if (comboBoxType1.SelectedIndex == -1 || textBoxPhoneNo1.Text.Trim() == string.Empty || Free == "" || textBoxPrice1.Text.Trim() == string.Empty)
                 {
                     MessageBox.Show("Please fill all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    check = db.UpdateRoom(No, comboBoxType1.SelectedItem.ToString(), textBoxPhoneNo1.Text.Trim(), Free);
+                    check = db.UpdateRoom(No, comboBoxType1.SelectedItem.ToString(), textBoxPhoneNo1.Text.Trim(), Free, textBoxPrice1.Text.Trim());
                     if (check)
                     {
                         MessageBox.Show("Room updated successfully", "Update Room", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -140,7 +143,7 @@ namespace HotelRes1.User_Control
             bool check;
             if (No != "")
             {
-                if (comboBoxType1.SelectedIndex == 0 || textBoxPhoneNo1.Text.Trim() == string.Empty || Free == "")
+                if (comboBoxType1.SelectedIndex == 0 || textBoxPhoneNo1.Text.Trim() == string.Empty || Free == "" || textBoxPrice1.Text.Trim() == string.Empty)
                 {
                     MessageBox.Show("Please fill all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
