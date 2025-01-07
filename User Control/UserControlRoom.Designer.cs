@@ -1,4 +1,4 @@
-namespace HotelRes1.User_Control
+﻿namespace HotelRes1.User_Control
 {
     partial class UserControlRoom
     {

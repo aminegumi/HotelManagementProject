@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace HotelRes1.User_Control
 {
     public partial class UserControlReservation : UserControl
@@ -71,6 +72,7 @@ namespace HotelRes1.User_Control
                     MessageBox.Show("Reservation added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Clear();
                 }
+
             }
         }
 
@@ -88,6 +90,7 @@ namespace HotelRes1.User_Control
         {
             db.DisplayAndSearchReservation("SELECT * FROM Reservation_Table WHERE Reservation_Client_ID LIKE '%" + textBoxSearchClientID.Text + "%'", dataGridViewReservation);
         }
+
         private void dataGridViewReservation_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -143,6 +146,7 @@ namespace HotelRes1.User_Control
             {
                 MessageBox.Show("Please first select row from table.", "Selection of row", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
 

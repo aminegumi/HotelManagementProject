@@ -85,7 +85,6 @@
             tabControlReservation.Name = "tabControlReservation";
             tabControlReservation.SelectedIndex = 0;
             tabControlReservation.Size = new Size(1562, 674);
-
             tabControlReservation.TabIndex = 0;
             // 
             // tabPageAddReservation
@@ -252,7 +251,7 @@
             tabPageSearchReservation.Controls.Add(label8);
             tabPageSearchReservation.Location = new Point(4, 4);
             tabPageSearchReservation.Name = "tabPageSearchReservation";
-            tabPageSearchReservation.Padding = new Padding(3);58
+            tabPageSearchReservation.Padding = new Padding(3);
             tabPageSearchReservation.Size = new Size(1554, 641);
             tabPageSearchReservation.TabIndex = 1;
             tabPageSearchReservation.Text = "Search Reservation";
@@ -483,7 +482,7 @@
             buttonCancel.Text = "Cancel";
             buttonCancel.UseVisualStyleBackColor = false;
             buttonCancel.Click += buttonCancel_Click;
-            //
+            // 
             // buttonUpdate
             // 
             buttonUpdate.Anchor = AnchorStyles.None;
@@ -598,6 +597,5 @@
         private Label label13;
         private Label label14;
         private Button buttonCancel;
-
     }
 }

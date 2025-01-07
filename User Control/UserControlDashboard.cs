@@ -8,10 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace HotelRes1.User_Control
 {
-
     public partial class UserControlDashboard : UserControl
     {
 
@@ -22,7 +20,6 @@ namespace HotelRes1.User_Control
             db = new DbConnector();
         }
 
-        }
         public void User()
         {
             labelUserCount.Text = db.Count("SELECT COUNT(*) FROM User_Table").ToString();
@@ -43,7 +40,6 @@ namespace HotelRes1.User_Control
             User();
             Client();
             Room();
-
         }
     }
 }
