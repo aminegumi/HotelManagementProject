@@ -83,6 +83,16 @@ namespace HotelRes1.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hotel__2_ {
+            get {
+                object obj = ResourceManager.GetObject("hotel (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap house_vector_icon {
             get {
                 object obj = ResourceManager.GetObject("house-vector-icon", resourceCulture);
@@ -123,9 +133,29 @@ namespace HotelRes1.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap people {
+            get {
+                object obj = ResourceManager.GetObject("people", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngtree_vector_user_young_boy_avatar_icon_png_image_4827810 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-vector-user-young-boy-avatar-icon-png-image_4827810", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rating {
+            get {
+                object obj = ResourceManager.GetObject("rating", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

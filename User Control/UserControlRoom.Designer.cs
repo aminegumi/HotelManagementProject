@@ -128,7 +128,7 @@
             comboBoxType.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxType.FlatStyle = FlatStyle.Flat;
             comboBoxType.FormattingEnabled = true;
-            comboBoxType.Items.AddRange(new object[] { "Single", "Double", "Family", "Suite" });
+            comboBoxType.Items.AddRange(new object[] { "selectionne le type de la chambre", "Single", "Double", "Family", "Suite" });
             comboBoxType.Location = new Point(76, 147);
             comboBoxType.Name = "comboBoxType";
             comboBoxType.Size = new Size(330, 28);
@@ -322,6 +322,7 @@
             tabPageUpdateAndDeleteRoom.TabIndex = 2;
             tabPageUpdateAndDeleteRoom.Text = "Update and Delete Room";
             tabPageUpdateAndDeleteRoom.UseVisualStyleBackColor = true;
+            tabPageUpdateAndDeleteRoom.Leave += tabPageUpdateAndDeleteRoom_Leave;
             // 
             // radioButtonNo1
             // 
@@ -352,7 +353,7 @@
             comboBoxType1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxType1.FlatStyle = FlatStyle.Flat;
             comboBoxType1.FormattingEnabled = true;
-            comboBoxType1.Items.AddRange(new object[] { "Single", "Double", "Family", "Suite" });
+            comboBoxType1.Items.AddRange(new object[] { "Veillez choisir un type pour la chambre", "Single", "Double", "Family", "Suite" });
             comboBoxType1.Location = new Point(73, 147);
             comboBoxType1.Name = "comboBoxType1";
             comboBoxType1.Size = new Size(330, 28);
@@ -454,6 +455,7 @@
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "UserControlRoom";
             Size = new Size(1630, 913);
+            Load += UserControlRoom_Load;
             tabControlRoom.ResumeLayout(false);
             tabPageAddRoom.ResumeLayout(false);
             tabPageAddRoom.PerformLayout();
