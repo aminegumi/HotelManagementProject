@@ -34,6 +34,8 @@
             radioButtonYes = new RadioButton();
             comboBoxType = new ComboBox();
             button1 = new Button();
+            textBoxPrice = new TextBox();
+            label11 = new Label();
             textBoxPhoneNo = new TextBox();
             label4 = new Label();
             label7 = new Label();
@@ -41,6 +43,11 @@
             label6 = new Label();
             tabPageSearchRoom = new TabPage();
             dataGridViewRoom = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
             textBoxSearchRoomNo = new TextBox();
             label8 = new Label();
             label9 = new Label();
@@ -50,20 +57,13 @@
             comboBoxType1 = new ComboBox();
             buttonDelete = new Button();
             buttonUpdate = new Button();
+            textBoxPrice1 = new TextBox();
             textBoxPhoneNo1 = new TextBox();
+            label12 = new Label();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label10 = new Label();
-            label11 = new Label();
-            textBoxPrice = new TextBox();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            label12 = new Label();
-            textBoxPrice1 = new TextBox();
             tabControlRoom.SuspendLayout();
             tabPageAddRoom.SuspendLayout();
             tabPageSearchRoom.SuspendLayout();
@@ -158,6 +158,25 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // textBoxPrice
+            // 
+            textBoxPrice.Anchor = AnchorStyles.None;
+            textBoxPrice.Location = new Point(559, 269);
+            textBoxPrice.Name = "textBoxPrice";
+            textBoxPrice.Size = new Size(330, 26);
+            textBoxPrice.TabIndex = 10;
+            // 
+            // label11
+            // 
+            label11.Anchor = AnchorStyles.None;
+            label11.AutoSize = true;
+            label11.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Location = new Point(559, 232);
+            label11.Name = "label11";
+            label11.Size = new Size(55, 19);
+            label11.TabIndex = 9;
+            label11.Text = "Price:";
+            // 
             // textBoxPhoneNo
             // 
             textBoxPhoneNo.Anchor = AnchorStyles.None;
@@ -242,10 +261,55 @@
             dataGridViewRoom.TabIndex = 13;
             dataGridViewRoom.CellClick += dataGridViewRoom_CellClick;
             // 
+            // Column1
+            // 
+            Column1.DataPropertyName = "Room_Number";
+            Column1.HeaderText = "No.";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            Column2.DataPropertyName = "Room_Type";
+            Column2.HeaderText = "Type";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            Column3.DataPropertyName = "Room_Phone";
+            Column3.HeaderText = "Phone";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            Column4.DataPropertyName = "Room_Free";
+            Column4.HeaderText = "Is Free?";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            Column5.DataPropertyName = "Room_Price";
+            Column5.HeaderText = "Price";
+            Column5.MinimumWidth = 6;
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            Column5.Width = 125;
+            // 
             // textBoxSearchRoomNo
             // 
             textBoxSearchRoomNo.Anchor = AnchorStyles.None;
-            textBoxSearchRoomNo.Location = new Point(579, 118);
+            textBoxSearchRoomNo.Location = new Point(393, 120);
             textBoxSearchRoomNo.Name = "textBoxSearchRoomNo";
             textBoxSearchRoomNo.Size = new Size(330, 26);
             textBoxSearchRoomNo.TabIndex = 12;
@@ -256,7 +320,7 @@
             label8.Anchor = AnchorStyles.None;
             label8.AutoSize = true;
             label8.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(579, 81);
+            label8.Location = new Point(393, 83);
             label8.Name = "label8";
             label8.Size = new Size(91, 19);
             label8.TabIndex = 11;
@@ -366,6 +430,14 @@
             buttonUpdate.UseVisualStyleBackColor = false;
             buttonUpdate.Click += buttonUpdate_Click;
             // 
+            // textBoxPrice1
+            // 
+            textBoxPrice1.Anchor = AnchorStyles.None;
+            textBoxPrice1.Location = new Point(556, 269);
+            textBoxPrice1.Name = "textBoxPrice1";
+            textBoxPrice1.Size = new Size(330, 26);
+            textBoxPrice1.TabIndex = 18;
+            // 
             // textBoxPhoneNo1
             // 
             textBoxPhoneNo1.Anchor = AnchorStyles.None;
@@ -373,6 +445,17 @@
             textBoxPhoneNo1.Name = "textBoxPhoneNo1";
             textBoxPhoneNo1.Size = new Size(330, 26);
             textBoxPhoneNo1.TabIndex = 18;
+            // 
+            // label12
+            // 
+            label12.Anchor = AnchorStyles.None;
+            label12.AutoSize = true;
+            label12.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Location = new Point(556, 232);
+            label12.Name = "label12";
+            label12.Size = new Size(55, 19);
+            label12.TabIndex = 17;
+            label12.Text = "Price:";
             // 
             // label1
             // 
@@ -418,89 +501,6 @@
             label10.Size = new Size(255, 23);
             label10.TabIndex = 14;
             label10.Text = "Update and Delete Room :";
-            // 
-            // label11
-            // 
-            label11.Anchor = AnchorStyles.None;
-            label11.AutoSize = true;
-            label11.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(559, 232);
-            label11.Name = "label11";
-            label11.Size = new Size(55, 19);
-            label11.TabIndex = 9;
-            label11.Text = "Price:";
-            // 
-            // textBoxPrice
-            // 
-            textBoxPrice.Anchor = AnchorStyles.None;
-            textBoxPrice.Location = new Point(559, 269);
-            textBoxPrice.Name = "textBoxPrice";
-            textBoxPrice.Size = new Size(330, 26);
-            textBoxPrice.TabIndex = 10;
-            // 
-            // Column1
-            // 
-            Column1.DataPropertyName = "Room_Number";
-            Column1.HeaderText = "No.";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            Column2.DataPropertyName = "Room_Type";
-            Column2.HeaderText = "Type";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            Column3.DataPropertyName = "Room_Phone";
-            Column3.HeaderText = "Phone";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            Column4.DataPropertyName = "Room_Free";
-            Column4.HeaderText = "Is Free?";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            Column5.DataPropertyName = "Room_Price";
-            Column5.HeaderText = "Price";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            Column5.Width = 125;
-            // 
-            // label12
-            // 
-            label12.Anchor = AnchorStyles.None;
-            label12.AutoSize = true;
-            label12.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(556, 232);
-            label12.Name = "label12";
-            label12.Size = new Size(55, 19);
-            label12.TabIndex = 17;
-            label12.Text = "Price:";
-            // 
-            // textBoxPrice1
-            // 
-            textBoxPrice1.Anchor = AnchorStyles.None;
-            textBoxPrice1.Location = new Point(556, 269);
-            textBoxPrice1.Name = "textBoxPrice1";
-            textBoxPrice1.Size = new Size(330, 26);
-            textBoxPrice1.TabIndex = 18;
             // 
             // UserControlRoom
             // 

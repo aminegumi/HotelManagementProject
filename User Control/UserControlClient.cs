@@ -82,6 +82,8 @@ namespace HotelRes1.User_Control
 
         }
 
+        
+
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
             bool check;
@@ -166,6 +168,14 @@ namespace HotelRes1.User_Control
         {
             db.DisplayAndSearchClient("SELECT* FROM Client_table", dataGridViewClient);
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            {
+                db.DisplayAndSearchUser($"SELECT* FROM Client_table WHERE Client_Email LIKE '%{textBox1.Text}%'", dataGridViewClient);
+
+            }
         }
     }
 }

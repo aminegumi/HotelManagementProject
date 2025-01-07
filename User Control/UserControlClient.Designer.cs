@@ -32,7 +32,9 @@
             tabPageAddClient = new TabPage();
             textBoxAddress = new TextBox();
             label5 = new Label();
+            textBoxEmail = new TextBox();
             textBoxPhoneNo = new TextBox();
+            label13 = new Label();
             label4 = new Label();
             buttonAdd = new Button();
             textBoxLastName = new TextBox();
@@ -42,14 +44,23 @@
             label1 = new Label();
             tabPageSearchClient = new TabPage();
             dataGridViewClient = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
             textBoxSearchPhoneNo = new TextBox();
+            label15 = new Label();
             label6 = new Label();
             label7 = new Label();
             tabPageUpdateAndDeleteClient = new TabPage();
             buttonDelete = new Button();
             textBoxAddress1 = new TextBox();
             label8 = new Label();
+            textBoxEmail1 = new TextBox();
             textBoxPhoneNo1 = new TextBox();
+            label14 = new Label();
             label9 = new Label();
             buttonUpdate = new Button();
             textBoxLastName1 = new TextBox();
@@ -57,16 +68,7 @@
             textBoxFirstName1 = new TextBox();
             label11 = new Label();
             label12 = new Label();
-            label13 = new Label();
-            textBoxEmail = new TextBox();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            label14 = new Label();
-            textBoxEmail1 = new TextBox();
+            textBox1 = new TextBox();
             tabSearchlClient.SuspendLayout();
             tabPageAddClient.SuspendLayout();
             tabPageSearchClient.SuspendLayout();
@@ -131,6 +133,14 @@
             label5.TabIndex = 14;
             label5.Text = "Address:";
             // 
+            // textBoxEmail
+            // 
+            textBoxEmail.Anchor = AnchorStyles.None;
+            textBoxEmail.Location = new Point(825, 270);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(330, 28);
+            textBoxEmail.TabIndex = 13;
+            // 
             // textBoxPhoneNo
             // 
             textBoxPhoneNo.Anchor = AnchorStyles.None;
@@ -138,6 +148,17 @@
             textBoxPhoneNo.Name = "textBoxPhoneNo";
             textBoxPhoneNo.Size = new Size(330, 28);
             textBoxPhoneNo.TabIndex = 13;
+            // 
+            // label13
+            // 
+            label13.Anchor = AnchorStyles.None;
+            label13.AutoSize = true;
+            label13.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.Location = new Point(825, 233);
+            label13.Name = "label13";
+            label13.Size = new Size(60, 19);
+            label13.TabIndex = 12;
+            label13.Text = "email:";
             // 
             // label4
             // 
@@ -219,8 +240,10 @@
             // 
             // tabPageSearchClient
             // 
+            tabPageSearchClient.Controls.Add(textBox1);
             tabPageSearchClient.Controls.Add(dataGridViewClient);
             tabPageSearchClient.Controls.Add(textBoxSearchPhoneNo);
+            tabPageSearchClient.Controls.Add(label15);
             tabPageSearchClient.Controls.Add(label6);
             tabPageSearchClient.Controls.Add(label7);
             tabPageSearchClient.Location = new Point(4, 4);
@@ -247,21 +270,86 @@
             dataGridViewClient.TabIndex = 9;
             dataGridViewClient.CellClick += dataGridViewClient_CellClick;
             // 
+            // Column1
+            // 
+            Column1.DataPropertyName = "Client_ID";
+            Column1.HeaderText = "ID";
+            Column1.MinimumWidth = 8;
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Width = 150;
+            // 
+            // Column2
+            // 
+            Column2.DataPropertyName = "Client_FirstName";
+            Column2.HeaderText = "First Name";
+            Column2.MinimumWidth = 8;
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Width = 300;
+            // 
+            // Column3
+            // 
+            Column3.DataPropertyName = "Client_LastName";
+            Column3.HeaderText = "Last Name";
+            Column3.MinimumWidth = 8;
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.Width = 300;
+            // 
+            // Column4
+            // 
+            Column4.DataPropertyName = "Client_Phone";
+            Column4.HeaderText = "Phone No";
+            Column4.MinimumWidth = 8;
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            Column4.Width = 300;
+            // 
+            // Column5
+            // 
+            Column5.DataPropertyName = "Client_Address";
+            Column5.HeaderText = "Address";
+            Column5.MinimumWidth = 8;
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            Column5.Width = 400;
+            // 
+            // Column6
+            // 
+            Column6.DataPropertyName = "Client_Email";
+            Column6.HeaderText = "Email";
+            Column6.MinimumWidth = 6;
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            Column6.Width = 125;
+            // 
             // textBoxSearchPhoneNo
             // 
             textBoxSearchPhoneNo.Anchor = AnchorStyles.None;
-            textBoxSearchPhoneNo.Location = new Point(576, 136);
+            textBoxSearchPhoneNo.Location = new Point(260, 124);
             textBoxSearchPhoneNo.Name = "textBoxSearchPhoneNo";
             textBoxSearchPhoneNo.Size = new Size(330, 28);
             textBoxSearchPhoneNo.TabIndex = 8;
             textBoxSearchPhoneNo.TextChanged += textBoxSearchPhoneNo_TextChanged;
+            // 
+            // label15
+            // 
+            label15.Anchor = AnchorStyles.None;
+            label15.AutoSize = true;
+            label15.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Location = new Point(645, 87);
+            label15.Name = "label15";
+            label15.Size = new Size(63, 19);
+            label15.TabIndex = 7;
+            label15.Text = "Email :";
             // 
             // label6
             // 
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(576, 99);
+            label6.Location = new Point(260, 87);
             label6.Name = "label6";
             label6.Size = new Size(95, 19);
             label6.TabIndex = 7;
@@ -297,7 +385,7 @@
             tabPageUpdateAndDeleteClient.Location = new Point(4, 4);
             tabPageUpdateAndDeleteClient.Name = "tabPageUpdateAndDeleteClient";
             tabPageUpdateAndDeleteClient.Padding = new Padding(3);
-            tabPageUpdateAndDeleteClient.Size = new Size(1554, 640);
+            tabPageUpdateAndDeleteClient.Size = new Size(1554, 641);
             tabPageUpdateAndDeleteClient.TabIndex = 2;
             tabPageUpdateAndDeleteClient.Text = "Update and Delete Client";
             tabPageUpdateAndDeleteClient.UseVisualStyleBackColor = true;
@@ -341,6 +429,14 @@
             label8.TabIndex = 24;
             label8.Text = "Address:";
             // 
+            // textBoxEmail1
+            // 
+            textBoxEmail1.Anchor = AnchorStyles.None;
+            textBoxEmail1.Location = new Point(825, 294);
+            textBoxEmail1.Name = "textBoxEmail1";
+            textBoxEmail1.Size = new Size(330, 28);
+            textBoxEmail1.TabIndex = 23;
+            // 
             // textBoxPhoneNo1
             // 
             textBoxPhoneNo1.Anchor = AnchorStyles.None;
@@ -348,6 +444,17 @@
             textBoxPhoneNo1.Name = "textBoxPhoneNo1";
             textBoxPhoneNo1.Size = new Size(330, 28);
             textBoxPhoneNo1.TabIndex = 23;
+            // 
+            // label14
+            // 
+            label14.Anchor = AnchorStyles.None;
+            label14.AutoSize = true;
+            label14.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.Location = new Point(825, 257);
+            label14.Name = "label14";
+            label14.Size = new Size(58, 19);
+            label14.TabIndex = 22;
+            label14.Text = "Email:";
             // 
             // label9
             // 
@@ -427,97 +534,13 @@
             label12.TabIndex = 16;
             label12.Text = "Update and Delete Client:";
             // 
-            // label13
+            // textBox1
             // 
-            label13.Anchor = AnchorStyles.None;
-            label13.AutoSize = true;
-            label13.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.Location = new Point(825, 233);
-            label13.Name = "label13";
-            label13.Size = new Size(60, 19);
-            label13.TabIndex = 12;
-            label13.Text = "email:";
-            // 
-            // textBoxEmail
-            // 
-            textBoxEmail.Anchor = AnchorStyles.None;
-            textBoxEmail.Location = new Point(825, 270);
-            textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(330, 28);
-            textBoxEmail.TabIndex = 13;
-            // 
-            // Column1
-            // 
-            Column1.DataPropertyName = "Client_ID";
-            Column1.HeaderText = "ID";
-            Column1.MinimumWidth = 8;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Width = 150;
-            // 
-            // Column2
-            // 
-            Column2.DataPropertyName = "Client_FirstName";
-            Column2.HeaderText = "First Name";
-            Column2.MinimumWidth = 8;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Width = 300;
-            // 
-            // Column3
-            // 
-            Column3.DataPropertyName = "Client_LastName";
-            Column3.HeaderText = "Last Name";
-            Column3.MinimumWidth = 8;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Width = 300;
-            // 
-            // Column4
-            // 
-            Column4.DataPropertyName = "Client_Phone";
-            Column4.HeaderText = "Phone No";
-            Column4.MinimumWidth = 8;
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            Column4.Width = 300;
-            // 
-            // Column5
-            // 
-            Column5.DataPropertyName = "Client_Address";
-            Column5.HeaderText = "Address";
-            Column5.MinimumWidth = 8;
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            Column5.Width = 400;
-            // 
-            // Column6
-            // 
-            Column6.DataPropertyName = "Client_Email";
-            Column6.HeaderText = "Email";
-            Column6.MinimumWidth = 6;
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            Column6.Width = 125;
-            // 
-            // label14
-            // 
-            label14.Anchor = AnchorStyles.None;
-            label14.AutoSize = true;
-            label14.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.Location = new Point(825, 257);
-            label14.Name = "label14";
-            label14.Size = new Size(58, 19);
-            label14.TabIndex = 22;
-            label14.Text = "Email:";
-            // 
-            // textBoxEmail1
-            // 
-            textBoxEmail1.Anchor = AnchorStyles.None;
-            textBoxEmail1.Location = new Point(825, 294);
-            textBoxEmail1.Name = "textBoxEmail1";
-            textBoxEmail1.Size = new Size(330, 28);
-            textBoxEmail1.TabIndex = 23;
+            textBox1.Location = new Point(645, 124);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(330, 28);
+            textBox1.TabIndex = 10;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // UserControlClient
             // 
@@ -581,5 +604,7 @@
         private DataGridViewTextBoxColumn Column6;
         private TextBox textBoxEmail1;
         private Label label14;
+        private Label label15;
+        private TextBox textBox1;
     }
 }
