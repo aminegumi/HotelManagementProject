@@ -167,7 +167,7 @@
             buttonDashboard.Name = "buttonDashboard";
             buttonDashboard.Size = new Size(254, 48);
             buttonDashboard.TabIndex = 1;
-            buttonDashboard.Text = "         Dashboard";
+            buttonDashboard.Text = "Dashboard";
             buttonDashboard.UseVisualStyleBackColor = true;
             buttonDashboard.Click += buttonDashboard_Click;
             // 

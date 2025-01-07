@@ -42,11 +42,6 @@
             label1 = new Label();
             tabPageSearchClient = new TabPage();
             dataGridViewClient = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
             textBoxSearchPhoneNo = new TextBox();
             label6 = new Label();
             label7 = new Label();
@@ -62,6 +57,16 @@
             textBoxFirstName1 = new TextBox();
             label11 = new Label();
             label12 = new Label();
+            label13 = new Label();
+            textBoxEmail = new TextBox();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            label14 = new Label();
+            textBoxEmail1 = new TextBox();
             tabSearchlClient.SuspendLayout();
             tabPageAddClient.SuspendLayout();
             tabPageSearchClient.SuspendLayout();
@@ -87,7 +92,9 @@
             // 
             tabPageAddClient.Controls.Add(textBoxAddress);
             tabPageAddClient.Controls.Add(label5);
+            tabPageAddClient.Controls.Add(textBoxEmail);
             tabPageAddClient.Controls.Add(textBoxPhoneNo);
+            tabPageAddClient.Controls.Add(label13);
             tabPageAddClient.Controls.Add(label4);
             tabPageAddClient.Controls.Add(buttonAdd);
             tabPageAddClient.Controls.Add(textBoxLastName);
@@ -98,7 +105,7 @@
             tabPageAddClient.Location = new Point(4, 4);
             tabPageAddClient.Name = "tabPageAddClient";
             tabPageAddClient.Padding = new Padding(3);
-            tabPageAddClient.Size = new Size(1554, 638);
+            tabPageAddClient.Size = new Size(1554, 640);
             tabPageAddClient.TabIndex = 0;
             tabPageAddClient.Text = "Add Client";
             tabPageAddClient.UseVisualStyleBackColor = true;
@@ -120,7 +127,7 @@
             label5.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.Location = new Point(342, 328);
             label5.Name = "label5";
-            label5.Size = new Size(94, 23);
+            label5.Size = new Size(81, 19);
             label5.TabIndex = 14;
             label5.Text = "Address:";
             // 
@@ -129,7 +136,7 @@
             textBoxPhoneNo.Anchor = AnchorStyles.None;
             textBoxPhoneNo.Location = new Point(342, 270);
             textBoxPhoneNo.Name = "textBoxPhoneNo";
-            textBoxPhoneNo.Size = new Size(330, 32);
+            textBoxPhoneNo.Size = new Size(330, 28);
             textBoxPhoneNo.TabIndex = 13;
             // 
             // label4
@@ -139,7 +146,7 @@
             label4.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.Location = new Point(342, 233);
             label4.Name = "label4";
-            label4.Size = new Size(111, 23);
+            label4.Size = new Size(95, 19);
             label4.TabIndex = 12;
             label4.Text = "Phone No:";
             // 
@@ -165,7 +172,7 @@
             textBoxLastName.Anchor = AnchorStyles.None;
             textBoxLastName.Location = new Point(825, 180);
             textBoxLastName.Name = "textBoxLastName";
-            textBoxLastName.Size = new Size(330, 32);
+            textBoxLastName.Size = new Size(330, 28);
             textBoxLastName.TabIndex = 10;
             // 
             // label3
@@ -175,7 +182,7 @@
             label3.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(825, 143);
             label3.Name = "label3";
-            label3.Size = new Size(119, 23);
+            label3.Size = new Size(100, 19);
             label3.TabIndex = 9;
             label3.Text = "Last Name:";
             // 
@@ -184,7 +191,7 @@
             textBoxFirstName.Anchor = AnchorStyles.None;
             textBoxFirstName.Location = new Point(342, 180);
             textBoxFirstName.Name = "textBoxFirstName";
-            textBoxFirstName.Size = new Size(330, 32);
+            textBoxFirstName.Size = new Size(330, 28);
             textBoxFirstName.TabIndex = 8;
             // 
             // label2
@@ -194,7 +201,7 @@
             label2.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(342, 143);
             label2.Name = "label2";
-            label2.Size = new Size(118, 23);
+            label2.Size = new Size(99, 19);
             label2.TabIndex = 7;
             label2.Text = "First Name:";
             // 
@@ -206,7 +213,7 @@
             label1.ForeColor = Color.FromArgb(175, 130, 96);
             label1.Location = new Point(6, 3);
             label1.Name = "label1";
-            label1.Size = new Size(131, 26);
+            label1.Size = new Size(114, 23);
             label1.TabIndex = 6;
             label1.Text = "Add Client:";
             // 
@@ -219,7 +226,7 @@
             tabPageSearchClient.Location = new Point(4, 4);
             tabPageSearchClient.Name = "tabPageSearchClient";
             tabPageSearchClient.Padding = new Padding(3);
-            tabPageSearchClient.Size = new Size(1554, 638);
+            tabPageSearchClient.Size = new Size(1554, 640);
             tabPageSearchClient.TabIndex = 1;
             tabPageSearchClient.Text = "Search Client";
             tabPageSearchClient.UseVisualStyleBackColor = true;
@@ -231,7 +238,7 @@
             dataGridViewClient.AllowUserToDeleteRows = false;
             dataGridViewClient.Anchor = AnchorStyles.None;
             dataGridViewClient.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewClient.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
+            dataGridViewClient.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
             dataGridViewClient.Location = new Point(43, 249);
             dataGridViewClient.Name = "dataGridViewClient";
             dataGridViewClient.ReadOnly = true;
@@ -239,6 +246,205 @@
             dataGridViewClient.Size = new Size(1464, 298);
             dataGridViewClient.TabIndex = 9;
             dataGridViewClient.CellClick += dataGridViewClient_CellClick;
+            // 
+            // textBoxSearchPhoneNo
+            // 
+            textBoxSearchPhoneNo.Anchor = AnchorStyles.None;
+            textBoxSearchPhoneNo.Location = new Point(576, 136);
+            textBoxSearchPhoneNo.Name = "textBoxSearchPhoneNo";
+            textBoxSearchPhoneNo.Size = new Size(330, 28);
+            textBoxSearchPhoneNo.TabIndex = 8;
+            textBoxSearchPhoneNo.TextChanged += textBoxSearchPhoneNo_TextChanged;
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.None;
+            label6.AutoSize = true;
+            label6.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(576, 99);
+            label6.Name = "label6";
+            label6.Size = new Size(95, 19);
+            label6.TabIndex = 7;
+            label6.Text = "Phone No:";
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.None;
+            label7.AutoSize = true;
+            label7.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.FromArgb(175, 130, 96);
+            label7.Location = new Point(3, 21);
+            label7.Name = "label7";
+            label7.Size = new Size(138, 23);
+            label7.TabIndex = 6;
+            label7.Text = "Search Client:";
+            // 
+            // tabPageUpdateAndDeleteClient
+            // 
+            tabPageUpdateAndDeleteClient.Controls.Add(buttonDelete);
+            tabPageUpdateAndDeleteClient.Controls.Add(textBoxAddress1);
+            tabPageUpdateAndDeleteClient.Controls.Add(label8);
+            tabPageUpdateAndDeleteClient.Controls.Add(textBoxEmail1);
+            tabPageUpdateAndDeleteClient.Controls.Add(textBoxPhoneNo1);
+            tabPageUpdateAndDeleteClient.Controls.Add(label14);
+            tabPageUpdateAndDeleteClient.Controls.Add(label9);
+            tabPageUpdateAndDeleteClient.Controls.Add(buttonUpdate);
+            tabPageUpdateAndDeleteClient.Controls.Add(textBoxLastName1);
+            tabPageUpdateAndDeleteClient.Controls.Add(label10);
+            tabPageUpdateAndDeleteClient.Controls.Add(textBoxFirstName1);
+            tabPageUpdateAndDeleteClient.Controls.Add(label11);
+            tabPageUpdateAndDeleteClient.Controls.Add(label12);
+            tabPageUpdateAndDeleteClient.Location = new Point(4, 4);
+            tabPageUpdateAndDeleteClient.Name = "tabPageUpdateAndDeleteClient";
+            tabPageUpdateAndDeleteClient.Padding = new Padding(3);
+            tabPageUpdateAndDeleteClient.Size = new Size(1554, 640);
+            tabPageUpdateAndDeleteClient.TabIndex = 2;
+            tabPageUpdateAndDeleteClient.Text = "Update and Delete Client";
+            tabPageUpdateAndDeleteClient.UseVisualStyleBackColor = true;
+            tabPageUpdateAndDeleteClient.Leave += tabPageUpdateAndDeleteClient_Leave;
+            // 
+            // buttonDelete
+            // 
+            buttonDelete.Anchor = AnchorStyles.None;
+            buttonDelete.BackColor = Color.Firebrick;
+            buttonDelete.Cursor = Cursors.Hand;
+            buttonDelete.FlatAppearance.BorderSize = 0;
+            buttonDelete.FlatStyle = FlatStyle.Flat;
+            buttonDelete.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonDelete.ForeColor = Color.White;
+            buttonDelete.Location = new Point(527, 518);
+            buttonDelete.Name = "buttonDelete";
+            buttonDelete.Size = new Size(145, 45);
+            buttonDelete.TabIndex = 26;
+            buttonDelete.Text = "Delete";
+            buttonDelete.UseVisualStyleBackColor = false;
+            buttonDelete.Click += buttonDelete_Click;
+            buttonDelete.Leave += buttonDelete_Leave;
+            // 
+            // textBoxAddress1
+            // 
+            textBoxAddress1.Anchor = AnchorStyles.None;
+            textBoxAddress1.Location = new Point(342, 389);
+            textBoxAddress1.Multiline = true;
+            textBoxAddress1.Name = "textBoxAddress1";
+            textBoxAddress1.Size = new Size(813, 90);
+            textBoxAddress1.TabIndex = 25;
+            // 
+            // label8
+            // 
+            label8.Anchor = AnchorStyles.None;
+            label8.AutoSize = true;
+            label8.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(342, 352);
+            label8.Name = "label8";
+            label8.Size = new Size(81, 19);
+            label8.TabIndex = 24;
+            label8.Text = "Address:";
+            // 
+            // textBoxPhoneNo1
+            // 
+            textBoxPhoneNo1.Anchor = AnchorStyles.None;
+            textBoxPhoneNo1.Location = new Point(342, 294);
+            textBoxPhoneNo1.Name = "textBoxPhoneNo1";
+            textBoxPhoneNo1.Size = new Size(330, 28);
+            textBoxPhoneNo1.TabIndex = 23;
+            // 
+            // label9
+            // 
+            label9.Anchor = AnchorStyles.None;
+            label9.AutoSize = true;
+            label9.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Location = new Point(342, 257);
+            label9.Name = "label9";
+            label9.Size = new Size(95, 19);
+            label9.TabIndex = 22;
+            label9.Text = "Phone No:";
+            // 
+            // buttonUpdate
+            // 
+            buttonUpdate.Anchor = AnchorStyles.None;
+            buttonUpdate.BackColor = Color.FromArgb(175, 130, 96);
+            buttonUpdate.Cursor = Cursors.Hand;
+            buttonUpdate.FlatAppearance.BorderSize = 0;
+            buttonUpdate.FlatStyle = FlatStyle.Flat;
+            buttonUpdate.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonUpdate.ForeColor = Color.White;
+            buttonUpdate.Location = new Point(342, 518);
+            buttonUpdate.Name = "buttonUpdate";
+            buttonUpdate.Size = new Size(145, 45);
+            buttonUpdate.TabIndex = 21;
+            buttonUpdate.Text = "Update";
+            buttonUpdate.UseVisualStyleBackColor = false;
+            buttonUpdate.Click += buttonUpdate_Click;
+            // 
+            // textBoxLastName1
+            // 
+            textBoxLastName1.Anchor = AnchorStyles.None;
+            textBoxLastName1.Location = new Point(825, 204);
+            textBoxLastName1.Name = "textBoxLastName1";
+            textBoxLastName1.Size = new Size(330, 28);
+            textBoxLastName1.TabIndex = 20;
+            // 
+            // label10
+            // 
+            label10.Anchor = AnchorStyles.None;
+            label10.AutoSize = true;
+            label10.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Location = new Point(825, 167);
+            label10.Name = "label10";
+            label10.Size = new Size(100, 19);
+            label10.TabIndex = 19;
+            label10.Text = "Last Name:";
+            // 
+            // textBoxFirstName1
+            // 
+            textBoxFirstName1.Anchor = AnchorStyles.None;
+            textBoxFirstName1.Location = new Point(342, 204);
+            textBoxFirstName1.Name = "textBoxFirstName1";
+            textBoxFirstName1.Size = new Size(330, 28);
+            textBoxFirstName1.TabIndex = 18;
+            // 
+            // label11
+            // 
+            label11.Anchor = AnchorStyles.None;
+            label11.AutoSize = true;
+            label11.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Location = new Point(342, 167);
+            label11.Name = "label11";
+            label11.Size = new Size(99, 19);
+            label11.TabIndex = 17;
+            label11.Text = "First Name:";
+            // 
+            // label12
+            // 
+            label12.Anchor = AnchorStyles.None;
+            label12.AutoSize = true;
+            label12.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.FromArgb(175, 130, 96);
+            label12.Location = new Point(6, 27);
+            label12.Name = "label12";
+            label12.Size = new Size(251, 23);
+            label12.TabIndex = 16;
+            label12.Text = "Update and Delete Client:";
+            // 
+            // label13
+            // 
+            label13.Anchor = AnchorStyles.None;
+            label13.AutoSize = true;
+            label13.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.Location = new Point(825, 233);
+            label13.Name = "label13";
+            label13.Size = new Size(60, 19);
+            label13.TabIndex = 12;
+            label13.Text = "email:";
+            // 
+            // textBoxEmail
+            // 
+            textBoxEmail.Anchor = AnchorStyles.None;
+            textBoxEmail.Location = new Point(825, 270);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(330, 28);
+            textBoxEmail.TabIndex = 13;
             // 
             // Column1
             // 
@@ -285,187 +491,37 @@
             Column5.ReadOnly = true;
             Column5.Width = 400;
             // 
-            // textBoxSearchPhoneNo
+            // Column6
             // 
-            textBoxSearchPhoneNo.Anchor = AnchorStyles.None;
-            textBoxSearchPhoneNo.Location = new Point(576, 136);
-            textBoxSearchPhoneNo.Name = "textBoxSearchPhoneNo";
-            textBoxSearchPhoneNo.Size = new Size(330, 32);
-            textBoxSearchPhoneNo.TabIndex = 8;
-            textBoxSearchPhoneNo.TextChanged += textBoxSearchPhoneNo_TextChanged;
+            Column6.DataPropertyName = "Client_Email";
+            Column6.HeaderText = "Email";
+            Column6.MinimumWidth = 6;
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            Column6.Width = 125;
             // 
-            // label6
+            // label14
             // 
-            label6.Anchor = AnchorStyles.None;
-            label6.AutoSize = true;
-            label6.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(576, 99);
-            label6.Name = "label6";
-            label6.Size = new Size(111, 23);
-            label6.TabIndex = 7;
-            label6.Text = "Phone No:";
+            label14.Anchor = AnchorStyles.None;
+            label14.AutoSize = true;
+            label14.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.Location = new Point(825, 257);
+            label14.Name = "label14";
+            label14.Size = new Size(58, 19);
+            label14.TabIndex = 22;
+            label14.Text = "Email:";
             // 
-            // label7
+            // textBoxEmail1
             // 
-            label7.Anchor = AnchorStyles.None;
-            label7.AutoSize = true;
-            label7.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.FromArgb(175, 130, 96);
-            label7.Location = new Point(3, 21);
-            label7.Name = "label7";
-            label7.Size = new Size(159, 26);
-            label7.TabIndex = 6;
-            label7.Text = "Search Client:";
-            // 
-            // tabPageUpdateAndDeleteClient
-            // 
-            tabPageUpdateAndDeleteClient.Controls.Add(buttonDelete);
-            tabPageUpdateAndDeleteClient.Controls.Add(textBoxAddress1);
-            tabPageUpdateAndDeleteClient.Controls.Add(label8);
-            tabPageUpdateAndDeleteClient.Controls.Add(textBoxPhoneNo1);
-            tabPageUpdateAndDeleteClient.Controls.Add(label9);
-            tabPageUpdateAndDeleteClient.Controls.Add(buttonUpdate);
-            tabPageUpdateAndDeleteClient.Controls.Add(textBoxLastName1);
-            tabPageUpdateAndDeleteClient.Controls.Add(label10);
-            tabPageUpdateAndDeleteClient.Controls.Add(textBoxFirstName1);
-            tabPageUpdateAndDeleteClient.Controls.Add(label11);
-            tabPageUpdateAndDeleteClient.Controls.Add(label12);
-            tabPageUpdateAndDeleteClient.Location = new Point(4, 4);
-            tabPageUpdateAndDeleteClient.Name = "tabPageUpdateAndDeleteClient";
-            tabPageUpdateAndDeleteClient.Padding = new Padding(3);
-            tabPageUpdateAndDeleteClient.Size = new Size(1554, 638);
-            tabPageUpdateAndDeleteClient.TabIndex = 2;
-            tabPageUpdateAndDeleteClient.Text = "Update and Delete Client";
-            tabPageUpdateAndDeleteClient.UseVisualStyleBackColor = true;
-            tabPageUpdateAndDeleteClient.Leave += tabPageUpdateAndDeleteClient_Leave;
-            // 
-            // buttonDelete
-            // 
-            buttonDelete.Anchor = AnchorStyles.None;
-            buttonDelete.BackColor = Color.Firebrick;
-            buttonDelete.Cursor = Cursors.Hand;
-            buttonDelete.FlatAppearance.BorderSize = 0;
-            buttonDelete.FlatStyle = FlatStyle.Flat;
-            buttonDelete.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonDelete.ForeColor = Color.White;
-            buttonDelete.Location = new Point(527, 518);
-            buttonDelete.Name = "buttonDelete";
-            buttonDelete.Size = new Size(145, 45);
-            buttonDelete.TabIndex = 26;
-            buttonDelete.Text = "Delete";
-            buttonDelete.UseVisualStyleBackColor = false;
-            buttonDelete.Click += buttonDelete_Click;
-            buttonDelete.Leave += buttonDelete_Leave;
-            // 
-            // textBoxAddress1
-            // 
-            textBoxAddress1.Anchor = AnchorStyles.None;
-            textBoxAddress1.Location = new Point(342, 389);
-            textBoxAddress1.Multiline = true;
-            textBoxAddress1.Name = "textBoxAddress1";
-            textBoxAddress1.Size = new Size(813, 90);
-            textBoxAddress1.TabIndex = 25;
-            // 
-            // label8
-            // 
-            label8.Anchor = AnchorStyles.None;
-            label8.AutoSize = true;
-            label8.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(342, 352);
-            label8.Name = "label8";
-            label8.Size = new Size(94, 23);
-            label8.TabIndex = 24;
-            label8.Text = "Address:";
-            // 
-            // textBoxPhoneNo1
-            // 
-            textBoxPhoneNo1.Anchor = AnchorStyles.None;
-            textBoxPhoneNo1.Location = new Point(342, 294);
-            textBoxPhoneNo1.Name = "textBoxPhoneNo1";
-            textBoxPhoneNo1.Size = new Size(330, 32);
-            textBoxPhoneNo1.TabIndex = 23;
-            // 
-            // label9
-            // 
-            label9.Anchor = AnchorStyles.None;
-            label9.AutoSize = true;
-            label9.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(342, 257);
-            label9.Name = "label9";
-            label9.Size = new Size(111, 23);
-            label9.TabIndex = 22;
-            label9.Text = "Phone No:";
-            // 
-            // buttonUpdate
-            // 
-            buttonUpdate.Anchor = AnchorStyles.None;
-            buttonUpdate.BackColor = Color.FromArgb(175, 130, 96);
-            buttonUpdate.Cursor = Cursors.Hand;
-            buttonUpdate.FlatAppearance.BorderSize = 0;
-            buttonUpdate.FlatStyle = FlatStyle.Flat;
-            buttonUpdate.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonUpdate.ForeColor = Color.White;
-            buttonUpdate.Location = new Point(342, 518);
-            buttonUpdate.Name = "buttonUpdate";
-            buttonUpdate.Size = new Size(145, 45);
-            buttonUpdate.TabIndex = 21;
-            buttonUpdate.Text = "Update";
-            buttonUpdate.UseVisualStyleBackColor = false;
-            buttonUpdate.Click += buttonUpdate_Click;
-            // 
-            // textBoxLastName1
-            // 
-            textBoxLastName1.Anchor = AnchorStyles.None;
-            textBoxLastName1.Location = new Point(825, 204);
-            textBoxLastName1.Name = "textBoxLastName1";
-            textBoxLastName1.Size = new Size(330, 32);
-            textBoxLastName1.TabIndex = 20;
-            // 
-            // label10
-            // 
-            label10.Anchor = AnchorStyles.None;
-            label10.AutoSize = true;
-            label10.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(825, 167);
-            label10.Name = "label10";
-            label10.Size = new Size(119, 23);
-            label10.TabIndex = 19;
-            label10.Text = "Last Name:";
-            // 
-            // textBoxFirstName1
-            // 
-            textBoxFirstName1.Anchor = AnchorStyles.None;
-            textBoxFirstName1.Location = new Point(342, 204);
-            textBoxFirstName1.Name = "textBoxFirstName1";
-            textBoxFirstName1.Size = new Size(330, 32);
-            textBoxFirstName1.TabIndex = 18;
-            // 
-            // label11
-            // 
-            label11.Anchor = AnchorStyles.None;
-            label11.AutoSize = true;
-            label11.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(342, 167);
-            label11.Name = "label11";
-            label11.Size = new Size(118, 23);
-            label11.TabIndex = 17;
-            label11.Text = "First Name:";
-            // 
-            // label12
-            // 
-            label12.Anchor = AnchorStyles.None;
-            label12.AutoSize = true;
-            label12.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.ForeColor = Color.FromArgb(175, 130, 96);
-            label12.Location = new Point(6, 27);
-            label12.Name = "label12";
-            label12.Size = new Size(289, 26);
-            label12.TabIndex = 16;
-            label12.Text = "Update and Delete Client:";
+            textBoxEmail1.Anchor = AnchorStyles.None;
+            textBoxEmail1.Location = new Point(825, 294);
+            textBoxEmail1.Name = "textBoxEmail1";
+            textBoxEmail1.Size = new Size(330, 28);
+            textBoxEmail1.TabIndex = 23;
             // 
             // UserControlClient
             // 
-            AutoScaleDimensions = new SizeF(12F, 23F);
+            AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(tabSearchlClient);
@@ -520,5 +576,10 @@
         private TextBox textBoxFirstName1;
         private Label label11;
         private Label label12;
+        private TextBox textBoxEmail;
+        private Label label13;
+        private DataGridViewTextBoxColumn Column6;
+        private TextBox textBoxEmail1;
+        private Label label14;
     }
 }
