@@ -247,17 +247,18 @@ namespace HotelRes1
             }
         }
 
-        public bool AddRoom(string RoomType, string RoomPhone, string RoomFree)
+        public bool AddRoom(string RoomType, string RoomPhone, string RoomFree, string RoomPrice)
         {
             try
             {
                 connection.Open();
-                string query = "INSERT INTO room_table (Room_Type, Room_Phone, Room_Free) VALUES (@RoomType, @RoomPhone, @RoomFree)";
+                string query = "INSERT INTO room_table (Room_Type, Room_Phone, Room_Free, Room_Price) VALUES (@RoomType, @RoomPhone, @RoomFree, @RoomPrice)";
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
                     cmd.Parameters.AddWithValue("@RoomType", RoomType);
                     cmd.Parameters.AddWithValue("@RoomPhone", RoomPhone);
                     cmd.Parameters.AddWithValue("@RoomFree", RoomFree);
+                    cmd.Parameters.AddWithValue("@RoomPrice", RoomPrice);
 
                     int result = cmd.ExecuteNonQuery();
                     return result > 0;
@@ -297,18 +298,19 @@ namespace HotelRes1
             }
         }
 
-        public bool UpdateRoom(string RoomNo, string RoomType, string RoomPhone, string RoomFree)
+        public bool UpdateRoom(string RoomNo, string RoomType, string RoomPhone, string RoomFree, string RoomPrice)
         {
             try
             {
                 connection.Open();
-                string query = "UPDATE room_table SET Room_Type = @RoomType, Room_Phone = @RoomPhone, Room_Free = @RoomFree WHERE Room_Number = @RoomNo";
+                string query = "UPDATE room_table SET Room_Type = @RoomType, Room_Phone = @RoomPhone, Room_Free = @RoomFree, Room_Price = @RoomPrice WHERE Room_Number = @RoomNo";
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
                     cmd.Parameters.AddWithValue("@RoomNo", RoomNo);
                     cmd.Parameters.AddWithValue("@RoomType", RoomType);
                     cmd.Parameters.AddWithValue("@RoomPhone", RoomPhone);
                     cmd.Parameters.AddWithValue("@RoomFree", RoomFree);
+                    cmd.Parameters.AddWithValue("@RoomPrice", RoomPrice);
 
                     int result = cmd.ExecuteNonQuery();
                     return result > 0;

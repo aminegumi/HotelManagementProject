@@ -41,10 +41,6 @@
             label6 = new Label();
             tabPageSearchRoom = new TabPage();
             dataGridViewRoom = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             textBoxSearchRoomNo = new TextBox();
             label8 = new Label();
             label9 = new Label();
@@ -59,6 +55,15 @@
             label2 = new Label();
             label3 = new Label();
             label10 = new Label();
+            label11 = new Label();
+            textBoxPrice = new TextBox();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            label12 = new Label();
+            textBoxPrice1 = new TextBox();
             tabControlRoom.SuspendLayout();
             tabPageAddRoom.SuspendLayout();
             tabPageSearchRoom.SuspendLayout();
@@ -85,6 +90,8 @@
             tabPageAddRoom.Controls.Add(radioButtonYes);
             tabPageAddRoom.Controls.Add(comboBoxType);
             tabPageAddRoom.Controls.Add(button1);
+            tabPageAddRoom.Controls.Add(textBoxPrice);
+            tabPageAddRoom.Controls.Add(label11);
             tabPageAddRoom.Controls.Add(textBoxPhoneNo);
             tabPageAddRoom.Controls.Add(label4);
             tabPageAddRoom.Controls.Add(label7);
@@ -226,7 +233,7 @@
             dataGridViewRoom.AllowUserToDeleteRows = false;
             dataGridViewRoom.Anchor = AnchorStyles.None;
             dataGridViewRoom.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewRoom.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
+            dataGridViewRoom.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
             dataGridViewRoom.Location = new Point(46, 246);
             dataGridViewRoom.Name = "dataGridViewRoom";
             dataGridViewRoom.ReadOnly = true;
@@ -234,42 +241,6 @@
             dataGridViewRoom.Size = new Size(1464, 298);
             dataGridViewRoom.TabIndex = 13;
             dataGridViewRoom.CellClick += dataGridViewRoom_CellClick;
-            // 
-            // Column1
-            // 
-            Column1.DataPropertyName = "Room_Number";
-            Column1.HeaderText = "No.";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            Column2.DataPropertyName = "Room_Type";
-            Column2.HeaderText = "Type";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            Column3.DataPropertyName = "Room_Phone";
-            Column3.HeaderText = "Phone";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            Column4.DataPropertyName = "Room_Free";
-            Column4.HeaderText = "Is Free?";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            Column4.Width = 125;
             // 
             // textBoxSearchRoomNo
             // 
@@ -310,7 +281,9 @@
             tabPageUpdateAndDeleteRoom.Controls.Add(comboBoxType1);
             tabPageUpdateAndDeleteRoom.Controls.Add(buttonDelete);
             tabPageUpdateAndDeleteRoom.Controls.Add(buttonUpdate);
+            tabPageUpdateAndDeleteRoom.Controls.Add(textBoxPrice1);
             tabPageUpdateAndDeleteRoom.Controls.Add(textBoxPhoneNo1);
+            tabPageUpdateAndDeleteRoom.Controls.Add(label12);
             tabPageUpdateAndDeleteRoom.Controls.Add(label1);
             tabPageUpdateAndDeleteRoom.Controls.Add(label2);
             tabPageUpdateAndDeleteRoom.Controls.Add(label3);
@@ -446,6 +419,89 @@
             label10.TabIndex = 14;
             label10.Text = "Update and Delete Room :";
             // 
+            // label11
+            // 
+            label11.Anchor = AnchorStyles.None;
+            label11.AutoSize = true;
+            label11.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Location = new Point(559, 232);
+            label11.Name = "label11";
+            label11.Size = new Size(55, 19);
+            label11.TabIndex = 9;
+            label11.Text = "Price:";
+            // 
+            // textBoxPrice
+            // 
+            textBoxPrice.Anchor = AnchorStyles.None;
+            textBoxPrice.Location = new Point(559, 269);
+            textBoxPrice.Name = "textBoxPrice";
+            textBoxPrice.Size = new Size(330, 26);
+            textBoxPrice.TabIndex = 10;
+            // 
+            // Column1
+            // 
+            Column1.DataPropertyName = "Room_Number";
+            Column1.HeaderText = "No.";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            Column2.DataPropertyName = "Room_Type";
+            Column2.HeaderText = "Type";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            Column3.DataPropertyName = "Room_Phone";
+            Column3.HeaderText = "Phone";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            Column4.DataPropertyName = "Room_Free";
+            Column4.HeaderText = "Is Free?";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            Column5.DataPropertyName = "Room_Price";
+            Column5.HeaderText = "Price";
+            Column5.MinimumWidth = 6;
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            Column5.Width = 125;
+            // 
+            // label12
+            // 
+            label12.Anchor = AnchorStyles.None;
+            label12.AutoSize = true;
+            label12.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Location = new Point(556, 232);
+            label12.Name = "label12";
+            label12.Size = new Size(55, 19);
+            label12.TabIndex = 17;
+            label12.Text = "Price:";
+            // 
+            // textBoxPrice1
+            // 
+            textBoxPrice1.Anchor = AnchorStyles.None;
+            textBoxPrice1.Location = new Point(556, 269);
+            textBoxPrice1.Name = "textBoxPrice1";
+            textBoxPrice1.Size = new Size(330, 26);
+            textBoxPrice1.TabIndex = 18;
+            // 
             // UserControlRoom
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
@@ -486,10 +542,6 @@
         private TextBox textBoxSearchRoomNo;
         private Label label8;
         private Label label9;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
         private RadioButton radioButtonNo1;
         private RadioButton radioButtonYes1;
         private ComboBox comboBoxType1;
@@ -500,5 +552,14 @@
         private Label label2;
         private Label label3;
         private Label label10;
+        private TextBox textBoxPrice;
+        private Label label11;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private TextBox textBoxPrice1;
+        private Label label12;
     }
 }

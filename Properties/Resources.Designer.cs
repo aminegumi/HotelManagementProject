@@ -123,6 +123,16 @@ namespace HotelRes1.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_macbook_de_performance_501 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-macbook-de-performance-501", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap monkey {
             get {
                 object obj = ResourceManager.GetObject("monkey", resourceCulture);
@@ -146,6 +156,16 @@ namespace HotelRes1.Properties {
         internal static System.Drawing.Bitmap pngtree_vector_user_young_boy_avatar_icon_png_image_4827810 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-vector-user-young-boy-avatar-icon-png-image_4827810", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_vector_user_young_boy_avatar_icon_png_image_48278101 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-vector-user-young-boy-avatar-icon-png-image_48278101", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
