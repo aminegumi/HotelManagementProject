@@ -1,0 +1,51 @@
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+
+## Visual Studio files
+.vs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.dtbcache.v2
+
+## .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Dependencies
+**/wwwroot/lib/
+node_modules/
+
+## Logs and databases
+*.log
+*.sqlite
+*.mdf
+*.ldf
+
+## Environment files
+appsettings.*.json
+!appsettings.json
+*.Development.json
+
+## IDE
+.vscode/
+.idea/
+
+## Testing
+TestResults/
+[Cc]overage/
+
+## Misc
+*.swp
+.DS_Store
+Thumbs.db
