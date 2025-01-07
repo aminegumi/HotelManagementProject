@@ -9,15 +9,23 @@ using System.Data.SqlClient;
 
 namespace HotelRes1
 {
+
     internal class DbConnector
     {
         private string connectionString;
         private MySqlConnection connection;
-        public DbConnector() {
+        private readonly EmailService _emailService;
+        public DbConnector()
+        {
             connectionString = "Server=127.0.0.1;Database=hotel_management_system;Uid=root;Pwd=;";
             connection = new MySqlConnection(connectionString);
+            _emailService = new EmailService(
+              "smtp.gmail.com",
+              587,
+              "zouhairtawjeeh@gmail.com",
+              "alwe daxl onhx vqzd"
+            );
         }
-
 
         public bool IsValidNamePass(string username, string password)
         {
@@ -372,6 +380,23 @@ namespace HotelRes1
                     cmd.Parameters.AddWithValue("@reservationOut", reservationOut);
 
                     int result = cmd.ExecuteNonQuery();
+                   
+                    if (result > 0)
+                    {
+
+                        string clientEmail = GetClientEmail(clientId);
+                        if (!string.IsNullOrEmpty(clientEmail))
+                        {
+                            _emailService.SendReservationConfirmation(
+                                clientEmail,
+                                "Valued Guest",
+                                roomType,
+                                roomId,
+                                reservationIn,
+                                reservationOut
+                            );
+                        }
+                    }
                     return result > 0;
                 }
             }
@@ -384,6 +409,32 @@ namespace HotelRes1
             {
                 connection.Close();
             }
+        }
+        private string GetClientEmail(string clientId)
+        {
+            string email = string.Empty;
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+
+                string query = "SELECT Client_Email FROM Client_table WHERE Client_ID = @clientId";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@clientId", clientId);
+                    object result = cmd.ExecuteScalar();
+                    email = result?.ToString() ?? string.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error getting client email: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return email;
         }
 
         public bool UpdateRoomFree(string roomNumber)
