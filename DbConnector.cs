@@ -550,6 +550,34 @@ namespace HotelRes1
             }
         }
 
+        public int Count(string query)
+        {
+            int result = 0;
+            try
+            {
+                connection.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    object count = cmd.ExecuteScalar();
+                    if (count != null && int.TryParse(count.ToString(), out int countValue))
+                    {
+                        result = countValue;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in Count function: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return result;
+        }
+
+
 
 
 
