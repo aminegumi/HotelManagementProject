@@ -382,21 +382,32 @@ namespace HotelRes1
                     cmd.Parameters.AddWithValue("@reservationStatus", reservationStatus);
 
                     int result = cmd.ExecuteNonQuery();
-                   
+
                     if (result > 0)
                     {
-
+                        // Retrieve the client email
                         string clientEmail = GetClientEmail(clientId);
                         if (!string.IsNullOrEmpty(clientEmail))
                         {
-                            _emailService.SendReservationConfirmation(
-                                clientEmail,
-                                "Valued Guest",
-                                roomType,
-                                roomId,
-                                reservationIn,
-                                reservationOut
-                            );
+                            // Determine which email to send based on reservation status
+                            if (reservationStatus == "Pending")
+                            {
+                                _emailService.SendReservationReceived(
+                                    clientEmail,
+                                    "Valued Guest"
+                                );
+                            }
+                            else if (reservationStatus == "Confirmed")
+                            {
+                                _emailService.SendReservationConfirmation(
+                                    clientEmail,
+                                    "Valued Guest",
+                                    roomType,
+                                    roomId,
+                                    reservationIn,
+                                    reservationOut
+                                );
+                            }
                         }
                     }
                     return result > 0;
@@ -556,6 +567,22 @@ namespace HotelRes1
                     cmd.Parameters.AddWithValue("@reservationStatus", reservationStatus);
 
                     int result = cmd.ExecuteNonQuery();
+                    if ( reservationStatus == "Confirmed")
+                    {
+                        string clientEmail = GetClientEmail(clientId);
+                        if (!string.IsNullOrEmpty(clientEmail))
+                        {
+                            _emailService.SendReservationConfirmation(
+                                clientEmail,
+                                "Valued Guest",
+                                roomType,
+                                roomNumber,
+                                reservationIn,
+                                reservationOut
+                            );
+                        }
+                        return result > 0;
+                    }
                     return result > 0;
                 }
             }
