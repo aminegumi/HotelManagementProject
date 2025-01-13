@@ -43,6 +43,8 @@
             label2 = new Label();
             label1 = new Label();
             tabPageSearchClient = new TabPage();
+            buttonExportClient = new Button();
+            textBox1 = new TextBox();
             dataGridViewClient = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
@@ -68,7 +70,6 @@
             textBoxFirstName1 = new TextBox();
             label11 = new Label();
             label12 = new Label();
-            textBox1 = new TextBox();
             tabSearchlClient.SuspendLayout();
             tabPageAddClient.SuspendLayout();
             tabPageSearchClient.SuspendLayout();
@@ -240,6 +241,7 @@
             // 
             // tabPageSearchClient
             // 
+            tabPageSearchClient.Controls.Add(buttonExportClient);
             tabPageSearchClient.Controls.Add(textBox1);
             tabPageSearchClient.Controls.Add(dataGridViewClient);
             tabPageSearchClient.Controls.Add(textBoxSearchPhoneNo);
@@ -254,6 +256,26 @@
             tabPageSearchClient.Text = "Search Client";
             tabPageSearchClient.UseVisualStyleBackColor = true;
             tabPageSearchClient.Enter += tabPageSearchClient_Enter;
+            // 
+            // buttonExportClient
+            // 
+            buttonExportClient.BackColor = Color.FromArgb(175, 130, 96);
+            buttonExportClient.FlatStyle = FlatStyle.Flat;
+            buttonExportClient.Location = new Point(1171, 123);
+            buttonExportClient.Name = "buttonExportClient";
+            buttonExportClient.Size = new Size(149, 29);
+            buttonExportClient.TabIndex = 11;
+            buttonExportClient.Text = "Export List ";
+            buttonExportClient.UseVisualStyleBackColor = false;
+            buttonExportClient.Click += buttonExportClient_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(645, 124);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(330, 28);
+            textBox1.TabIndex = 10;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // dataGridViewClient
             // 
@@ -534,14 +556,6 @@
             label12.TabIndex = 16;
             label12.Text = "Update and Delete Client:";
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(645, 124);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(330, 28);
-            textBox1.TabIndex = 10;
-            textBox1.TextChanged += textBox1_TextChanged;
-            // 
             // UserControlClient
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
@@ -606,5 +620,6 @@
         private Label label14;
         private Label label15;
         private TextBox textBox1;
+        private Button buttonExportClient;
     }
 }

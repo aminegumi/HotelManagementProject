@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
 using System.Data.SqlClient;
+using Mysqlx.Crud;
 
 namespace HotelRes1
 {
@@ -361,15 +362,15 @@ namespace HotelRes1
         }
 
 
-        public bool AddReservation(string roomId, string roomType, string clientId, string reservationIn, string reservationOut)
+        public bool AddReservation(string roomId, string roomType, string clientId, string reservationIn, string reservationOut, string reservationStatus)
         {
             try
             {
                 connection.Open();
                 string query = @"
             INSERT INTO reservation_table 
-            (Reservation_Room_Number, Reservation_Room_Type, Reservation_Client_ID, Reservation_In, Reservation_Out) 
-            VALUES (@roomId, @roomType, @clientId, @reservationIn, @reservationOut)";
+            (Reservation_Room_Number, Reservation_Room_Type, Reservation_Client_ID, Reservation_In, Reservation_Out, Reservation_Status) 
+            VALUES (@roomId, @roomType, @clientId, @reservationIn, @reservationOut, @reservationStatus)";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
@@ -378,6 +379,7 @@ namespace HotelRes1
                     cmd.Parameters.AddWithValue("@clientId", clientId);
                     cmd.Parameters.AddWithValue("@reservationIn", reservationIn);
                     cmd.Parameters.AddWithValue("@reservationOut", reservationOut);
+                    cmd.Parameters.AddWithValue("@reservationStatus", reservationStatus);
 
                     int result = cmd.ExecuteNonQuery();
                    
@@ -475,7 +477,7 @@ namespace HotelRes1
                     cmd.Parameters.AddWithValue("@roomNumber", roomNumber);
 
                     int result = cmd.ExecuteNonQuery();
-                    return result > 0; // True if a row was updated
+                    return result > 0; 
                 }
             }
             catch (Exception ex)
@@ -485,6 +487,29 @@ namespace HotelRes1
             }
             finally
             {
+                connection.Close();
+            }
+        }
+
+        public bool CancelStatus(string RID)
+        {
+            try
+            {
+                connection.Open();
+                string query = "UPDATE reservation_table SET Reservation_Status = 'Canceled' WHERE Reservation_ID = @RID";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@RID", RID);
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+
+                }
+            }
+            catch (Exception ex) {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+            finally { 
                 connection.Close();
             }
         }
@@ -514,12 +539,12 @@ namespace HotelRes1
             }
         }
 
-        public bool UpdateReservation(string reservationId, string roomType, string roomNumber, string clientId, string reservationIn, string reservationOut)
+        public bool UpdateReservation(string reservationId, string roomType, string roomNumber, string clientId, string reservationIn, string reservationOut, string reservationStatus)
         {
             try
             {
                 connection.Open();
-                string query = "UPDATE reservation_table SET Reservation_Room_Type = @roomType, Reservation_Room_Number = @roomNumber, Reservation_Client_ID = @clientId, Reservation_In = @reservationIn, Reservation_Out = @reservationOut WHERE Reservation_ID = @reservationId";
+                string query = "UPDATE reservation_table SET Reservation_Room_Type = @roomType, Reservation_Room_Number = @roomNumber, Reservation_Client_ID = @clientId, Reservation_In = @reservationIn, Reservation_Out = @reservationOut, Reservation_Status = @reservationStatus WHERE Reservation_ID = @reservationId";
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
                     cmd.Parameters.AddWithValue("@reservationId", reservationId);
@@ -528,6 +553,7 @@ namespace HotelRes1
                     cmd.Parameters.AddWithValue("@clientId", clientId);
                     cmd.Parameters.AddWithValue("@reservationIn", reservationIn);
                     cmd.Parameters.AddWithValue("@reservationOut", reservationOut);
+                    cmd.Parameters.AddWithValue("@reservationStatus", reservationStatus);
 
                     int result = cmd.ExecuteNonQuery();
                     return result > 0;

@@ -39,6 +39,7 @@ namespace HotelRes1.User_Control
             dateTimePickerIn1.Value = DateTime.Now;
             dateTimePickerOut1.Value = DateTime.Now;
             RID = "";
+            comboBoxStatus1.SelectedIndex = 0;
         }
 
         private void UserControlReservation_Load(object sender, EventArgs e)
@@ -65,7 +66,7 @@ namespace HotelRes1.User_Control
             }
             else
             {
-                check = db.AddReservation(comboBoxNo.SelectedItem.ToString(), comboBoxType.SelectedItem.ToString(), textBoxClientID.Text.Trim(), dateTimePickerIn.Text, dateTimePickerOut.Text);
+                check = db.AddReservation(comboBoxNo.SelectedItem.ToString(), comboBoxType.SelectedItem.ToString(), textBoxClientID.Text.Trim(), dateTimePickerIn.Text, dateTimePickerOut.Text, "Confirmed");
                 db.UpdateRoomFree(comboBoxNo.SelectedItem.ToString());
                 if (check)
                 {
@@ -104,6 +105,7 @@ namespace HotelRes1.User_Control
                 textBoxClientID1.Text = row.Cells[3].Value.ToString();
                 dateTimePickerIn1.Text = row.Cells[4].Value.ToString();
                 dateTimePickerOut1.Text = row.Cells[5].Value.ToString();
+                comboBoxStatus1.SelectedItem = row.Cells[6].Value.ToString();
             }
         }
 
@@ -118,23 +120,28 @@ namespace HotelRes1.User_Control
                 }
                 else
                 {
-                    if (comboBoxType1.SelectedItem == null || comboBoxNo1.SelectedItem == null)
+                    if (comboBoxType1.SelectedItem == null || comboBoxNo1.SelectedItem == null || comboBoxStatus1.SelectedItem == null)
                     {
                         MessageBox.Show("Please select valid options from the dropdowns.", "Require selection", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
-                    
-                    if(No != comboBoxNo1.SelectedItem.ToString())
+
+                    if (No != comboBoxNo1.SelectedItem.ToString())
                     {
-                        check = db.UpdateReservation(RID, comboBoxType1.SelectedItem.ToString(), comboBoxNo1.SelectedItem.ToString(), textBoxClientID1.Text.Trim(), dateTimePickerIn1.Text, dateTimePickerOut1.Text);
+                        check = db.UpdateReservation(RID, comboBoxType1.SelectedItem.ToString(), comboBoxNo1.SelectedItem.ToString(), textBoxClientID1.Text.Trim(), dateTimePickerIn1.Text, dateTimePickerOut1.Text, comboBoxStatus1.SelectedItem.ToString());
                         db.UpdateRoomFreeToYes(No);
                         db.UpdateRoomFree(comboBoxNo1.SelectedItem.ToString());
-                    }else
-                    {
-                        check = db.UpdateReservation(RID, comboBoxType1.SelectedItem.ToString(), No, textBoxClientID1.Text.Trim(), dateTimePickerIn1.Text, dateTimePickerOut1.Text);
                     }
-                    
+                    else
+                    {
+                        check = db.UpdateReservation(RID, comboBoxType1.SelectedItem.ToString(), No, textBoxClientID1.Text.Trim(), dateTimePickerIn1.Text, dateTimePickerOut1.Text, comboBoxStatus1.SelectedItem.ToString());
+                        if (comboBoxStatus1.SelectedItem.ToString() == "Canceled")
+                        {
+                            db.UpdateRoomFreeToYes(No);
+                        }
+                    }
+
                     if (check)
                     {
                         MessageBox.Show("Reservation updated successfully", "Update Reservation", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -164,7 +171,7 @@ namespace HotelRes1.User_Control
                     DialogResult dialogResult = MessageBox.Show("Are you sure you want to cancel this reservation?", "Cancel Reservation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        check = db.DeleteReservation(RID);
+                        check = db.CancelStatus(RID);
                         db.UpdateRoomFreeToYes(No);
                         if (check)
                         {
@@ -193,6 +200,45 @@ namespace HotelRes1.User_Control
         private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e)
         {
             db.RoomTypeAndNo("SELECT Room_Number FROM Room_Table WHERE Room_Type = '" + comboBoxType.SelectedItem.ToString() + "'AND Room_Free = 'Yes' ORDER BY Room_Number", comboBoxNo);
+        }
+
+        private void buttonExportClient_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "CSV files (.csv)|.csv|All files (.)|.";
+                sfd.Title = "Export to CSV";
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+
+                    StringBuilder csv = new StringBuilder();
+
+                    // Add headers
+                    for (int i = 0; i < dataGridViewReservation.Columns.Count; i++)
+                    {
+                        csv.Append(dataGridViewReservation.Columns[i].HeaderText);
+                        if (i < dataGridViewReservation.Columns.Count - 1)
+                            csv.Append(";");
+                    }
+                    csv.AppendLine();
+
+                    // Add rows data
+                    foreach (DataGridViewRow row in dataGridViewReservation.Rows)
+                    {
+                        for (int i = 0; i < row.Cells.Count; i++)
+                        {
+                            csv.Append(row.Cells[i].Value.ToString());
+                            if (i < row.Cells.Count - 1)
+                                csv.Append(";");
+                        }
+                        csv.AppendLine();
+                    }
+
+                    // Write to file
+                    File.WriteAllText(sfd.FileName, csv.ToString());
+                    MessageBox.Show("Data exported successfully.", "Export Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }

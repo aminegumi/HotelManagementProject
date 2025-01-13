@@ -50,12 +50,14 @@
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
             textBoxSearchClientID = new TextBox();
             label7 = new Label();
             label8 = new Label();
             tabPageUpdateAndCancelReservation = new TabPage();
             dateTimePickerOut1 = new DateTimePicker();
             dateTimePickerIn1 = new DateTimePicker();
+            comboBoxStatus1 = new ComboBox();
             comboBoxNo1 = new ComboBox();
             comboBoxType1 = new ComboBox();
             textBoxClientID1 = new TextBox();
@@ -63,10 +65,12 @@
             label10 = new Label();
             label11 = new Label();
             buttonCancel = new Button();
+            label15 = new Label();
             buttonUpdate = new Button();
             label12 = new Label();
             label13 = new Label();
             label14 = new Label();
+            buttonExportClient = new Button();
             tabControlReservation.SuspendLayout();
             tabPageAddReservation.SuspendLayout();
             tabPageSearchReservation.SuspendLayout();
@@ -245,6 +249,7 @@
             // 
             // tabPageSearchReservation
             // 
+            tabPageSearchReservation.Controls.Add(buttonExportClient);
             tabPageSearchReservation.Controls.Add(dataGridViewReservation);
             tabPageSearchReservation.Controls.Add(textBoxSearchClientID);
             tabPageSearchReservation.Controls.Add(label7);
@@ -252,7 +257,7 @@
             tabPageSearchReservation.Location = new Point(4, 4);
             tabPageSearchReservation.Name = "tabPageSearchReservation";
             tabPageSearchReservation.Padding = new Padding(3);
-            tabPageSearchReservation.Size = new Size(1554, 641);
+            tabPageSearchReservation.Size = new Size(1554, 640);
             tabPageSearchReservation.TabIndex = 1;
             tabPageSearchReservation.Text = "Search Reservation";
             tabPageSearchReservation.UseVisualStyleBackColor = true;
@@ -265,7 +270,7 @@
             dataGridViewReservation.AllowUserToDeleteRows = false;
             dataGridViewReservation.Anchor = AnchorStyles.None;
             dataGridViewReservation.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewReservation.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
+            dataGridViewReservation.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7 });
             dataGridViewReservation.Location = new Point(43, 231);
             dataGridViewReservation.Name = "dataGridViewReservation";
             dataGridViewReservation.ReadOnly = true;
@@ -328,10 +333,19 @@
             Column6.ReadOnly = true;
             Column6.Width = 125;
             // 
+            // Column7
+            // 
+            Column7.DataPropertyName = "Reservation_Status";
+            Column7.HeaderText = "Status";
+            Column7.MinimumWidth = 6;
+            Column7.Name = "Column7";
+            Column7.ReadOnly = true;
+            Column7.Width = 125;
+            // 
             // textBoxSearchClientID
             // 
             textBoxSearchClientID.Anchor = AnchorStyles.None;
-            textBoxSearchClientID.Location = new Point(576, 118);
+            textBoxSearchClientID.Location = new Point(222, 135);
             textBoxSearchClientID.Name = "textBoxSearchClientID";
             textBoxSearchClientID.Size = new Size(330, 28);
             textBoxSearchClientID.TabIndex = 12;
@@ -342,7 +356,7 @@
             label7.Anchor = AnchorStyles.None;
             label7.AutoSize = true;
             label7.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(576, 81);
+            label7.Location = new Point(222, 98);
             label7.Name = "label7";
             label7.Size = new Size(82, 19);
             label7.TabIndex = 11;
@@ -364,6 +378,7 @@
             // 
             tabPageUpdateAndCancelReservation.Controls.Add(dateTimePickerOut1);
             tabPageUpdateAndCancelReservation.Controls.Add(dateTimePickerIn1);
+            tabPageUpdateAndCancelReservation.Controls.Add(comboBoxStatus1);
             tabPageUpdateAndCancelReservation.Controls.Add(comboBoxNo1);
             tabPageUpdateAndCancelReservation.Controls.Add(comboBoxType1);
             tabPageUpdateAndCancelReservation.Controls.Add(textBoxClientID1);
@@ -371,6 +386,7 @@
             tabPageUpdateAndCancelReservation.Controls.Add(label10);
             tabPageUpdateAndCancelReservation.Controls.Add(label11);
             tabPageUpdateAndCancelReservation.Controls.Add(buttonCancel);
+            tabPageUpdateAndCancelReservation.Controls.Add(label15);
             tabPageUpdateAndCancelReservation.Controls.Add(buttonUpdate);
             tabPageUpdateAndCancelReservation.Controls.Add(label12);
             tabPageUpdateAndCancelReservation.Controls.Add(label13);
@@ -399,6 +415,18 @@
             dateTimePickerIn1.Name = "dateTimePickerIn1";
             dateTimePickerIn1.Size = new Size(330, 28);
             dateTimePickerIn1.TabIndex = 35;
+            // 
+            // comboBoxStatus1
+            // 
+            comboBoxStatus1.Anchor = AnchorStyles.None;
+            comboBoxStatus1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxStatus1.FlatStyle = FlatStyle.Flat;
+            comboBoxStatus1.FormattingEnabled = true;
+            comboBoxStatus1.Items.AddRange(new object[] { "Choissisez un status", "Confirmed", "Rejected", "Canceled", "Pending" });
+            comboBoxStatus1.Location = new Point(826, 273);
+            comboBoxStatus1.Name = "comboBoxStatus1";
+            comboBoxStatus1.Size = new Size(330, 29);
+            comboBoxStatus1.TabIndex = 32;
             // 
             // comboBoxNo1
             // 
@@ -483,6 +511,17 @@
             buttonCancel.UseVisualStyleBackColor = false;
             buttonCancel.Click += buttonCancel_Click;
             // 
+            // label15
+            // 
+            label15.Anchor = AnchorStyles.None;
+            label15.AutoSize = true;
+            label15.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Location = new Point(826, 236);
+            label15.Name = "label15";
+            label15.Size = new Size(65, 19);
+            label15.TabIndex = 26;
+            label15.Text = "Status :";
+            // 
             // buttonUpdate
             // 
             buttonUpdate.Anchor = AnchorStyles.None;
@@ -534,6 +573,18 @@
             label14.TabIndex = 24;
             label14.Text = "Update and Cancel Reservation:";
             // 
+            // buttonExportClient
+            // 
+            buttonExportClient.BackColor = Color.FromArgb(175, 130, 96);
+            buttonExportClient.FlatStyle = FlatStyle.Flat;
+            buttonExportClient.Location = new Point(1276, 134);
+            buttonExportClient.Name = "buttonExportClient";
+            buttonExportClient.Size = new Size(149, 29);
+            buttonExportClient.TabIndex = 14;
+            buttonExportClient.Text = "Export List ";
+            buttonExportClient.UseVisualStyleBackColor = false;
+            buttonExportClient.Click += buttonExportClient_Click;
+            // 
             // UserControlReservation
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
@@ -578,12 +629,6 @@
         private TextBox textBoxSearchClientID;
         private Label label7;
         private Label label8;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
         private DateTimePicker dateTimePickerOut1;
         private DateTimePicker dateTimePickerIn1;
         private ComboBox comboBoxNo1;
@@ -597,5 +642,15 @@
         private Label label13;
         private Label label14;
         private Button buttonCancel;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
+        private ComboBox comboBoxStatus1;
+        private Label label15;
+        private Button buttonExportClient;
     }
 }

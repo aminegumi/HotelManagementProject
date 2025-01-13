@@ -64,6 +64,7 @@
             label2 = new Label();
             label3 = new Label();
             label10 = new Label();
+            buttonExportClient = new Button();
             tabControlRoom.SuspendLayout();
             tabPageAddRoom.SuspendLayout();
             tabPageSearchRoom.SuspendLayout();
@@ -232,6 +233,7 @@
             // 
             // tabPageSearchRoom
             // 
+            tabPageSearchRoom.Controls.Add(buttonExportClient);
             tabPageSearchRoom.Controls.Add(dataGridViewRoom);
             tabPageSearchRoom.Controls.Add(textBoxSearchRoomNo);
             tabPageSearchRoom.Controls.Add(label8);
@@ -502,6 +504,18 @@
             label10.TabIndex = 14;
             label10.Text = "Update and Delete Room :";
             // 
+            // buttonExportClient
+            // 
+            buttonExportClient.BackColor = Color.FromArgb(175, 130, 96);
+            buttonExportClient.FlatStyle = FlatStyle.Flat;
+            buttonExportClient.Location = new Point(1151, 120);
+            buttonExportClient.Name = "buttonExportClient";
+            buttonExportClient.Size = new Size(149, 29);
+            buttonExportClient.TabIndex = 14;
+            buttonExportClient.Text = "Export List ";
+            buttonExportClient.UseVisualStyleBackColor = false;
+            buttonExportClient.Click += buttonExportClient_Click;
+            // 
             // UserControlRoom
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
@@ -561,5 +575,6 @@
         private DataGridViewTextBoxColumn Column5;
         private TextBox textBoxPrice1;
         private Label label12;
+        private Button buttonExportClient;
     }
 }

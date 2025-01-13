@@ -82,7 +82,7 @@ namespace HotelRes1.User_Control
 
         }
 
-        
+
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
@@ -177,5 +177,46 @@ namespace HotelRes1.User_Control
 
             }
         }
+
+        private void buttonExportClient_Click(object sender, EventArgs e)
+        {
+            
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "CSV files (.csv)|.csv|All files (.)|.";
+                sfd.Title = "Export to CSV";
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    
+                    StringBuilder csv = new StringBuilder();
+
+                    // Add headers
+                    for (int i = 0; i < dataGridViewClient.Columns.Count; i++)
+                    {
+                        csv.Append(dataGridViewClient.Columns[i].HeaderText);
+                        if (i < dataGridViewClient.Columns.Count - 1)
+                            csv.Append(";");
+                    }
+                    csv.AppendLine();
+
+                    // Add rows data
+                    foreach (DataGridViewRow row in dataGridViewClient.Rows)
+                    {
+                        for (int i = 0; i < row.Cells.Count; i++)
+                        {
+                            csv.Append(row.Cells[i].Value.ToString());
+                            if (i < row.Cells.Count - 1)
+                                csv.Append(";");
+                        }
+                        csv.AppendLine();
+                    }
+
+                    // Write to file
+                    File.WriteAllText(sfd.FileName, csv.ToString());
+                    MessageBox.Show("Data exported successfully.", "Export Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+    
     }
 }
